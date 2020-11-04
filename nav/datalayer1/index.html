@@ -102,6 +102,7 @@ $("#panBy").on("click", function(e) {
 $("#My_pos").on("click", function(e) {
     e.preventDefault();
     
+    map.setCenter(location); // 얻은 위치로 이동
     //getLocation();
 
     // window.alert("계속 추가중입니다. ^^\n" +
