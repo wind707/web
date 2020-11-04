@@ -47,16 +47,8 @@
 
 
 <script id="code">
-var map = new naver.maps.Map(document.getElementById('map'), {
-    zoom: 18,
-    mapTypeId: 'normal',
-    center: new naver.maps.LatLng(37.3586524, 127.1060678)
-});
-
-
-
     // + - 컨트롤러
-var mapOptions = {
+    var mapOptions = {
         mapTypeControl: true,
         mapTypeControlOptions: {
             style: naver.maps.MapTypeControlStyle.BUTTON,
@@ -83,6 +75,11 @@ var mapOptions = {
 
 //var map = new naver.maps.Map(document.getElementById('map'), mapOptions);
 
+var map = new naver.maps.Map(document.getElementById('map'), {
+    zoom: 18,
+    mapTypeId: 'normal',
+    center: new naver.maps.LatLng(37.3586524, 127.1060678)
+});
 
 var jeju = new naver.maps.LatLng(33.3590628, 126.534361),
     busan = new naver.maps.LatLng(35.1797865, 129.0750194),
