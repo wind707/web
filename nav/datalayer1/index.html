@@ -127,8 +127,8 @@ function onSuccessGeolocation(position) {
     //             "천천히 탭하세요~");
     pos_lat = naver.maps.LatLng(position.coords.latitude);
     pos_lng = naver.maps.LatLng(position.coords.longitude);
-    window.alert("latitude  : " + naver.maps.LatLng(position.coords.latitude) +
-               "\nlongitude : " + naver.maps.LatLng(position.coords.longitude) +
+    window.alert("latitude  : " + position.coords.latitude +
+               "\nlongitude : " + position.coords.longitude +
             "\n");
     // here = location;   
     map.setCenter(location); // 얻은 좌표를 지도의 중심으로 설정합니다.
