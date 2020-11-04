@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>네이버 지도 API 테스트</title>
+    <script src="../../docs/js/jquery-1.9.1.js"></script>
+    <!--script type="text/javascript" src="../../docs/js/examples-base.js"></script>  -->
+    <!-- script type="text/javascript" src="../../docs/js/highlight.min.js"></script> -->
+    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=sty9e4ckef"></script>​
+    <!-- link rel="stylesheet" type="text/css" href="../../docs/css/examples-base.css" / -->
+    <script>
+        var HOME_PATH = '../../docs';
+    </script>
+</head>
+<body>
+
+<!-- @category DataLayer -->
+
+<div id="wrap" class="section">
+    <!-- <h2>GeoJSON 데이터 레이어 표시하기</h2> -->
+    <!-- <p>GeoJSON 데이터를 지도에 표시하는 예제입니다. 이 예제는 jQuery 구문을 포함하고 있습니다.</p> -->
+    <div id="map" style="width:100%;height:800px"></div>
+    <code id="snippet" class="snippet"></code>
+</div>
+
+
+<style type="text/css">
+    #wrap .buttons { position:absolute;top:0;left:0;z-index:1000;padding:5px; }
+    #wrap .buttons .control-btn { margin:0 5px 5px 0; }
+</style>
+<div id="wrap" class="section">
+    <div id="map" style="width:100%;height:600px;">
+        <div class="buttons">
+            <input id="to-jeju" type="button" value="제주도로 setCenter" class="control-btn" />
+            <input id="to-1" type="button" value="6레벨로 setZoom" class="control-btn" />
+            <input id="to-dokdo" type="button" value="독도로 fitBounds" class="control-btn" />
+            <input id="to-busan" type="button" value="부산으로 panTo" class="control-btn" />
+            <input id="to-seoul" type="button" value="서울로 panToBounds" class="control-btn" />
+            <input id="panBy" type="button" value="panBy로 조금씩 이동하기" class="control-btn" />
+            <input id="My_pos" type="button" value="현재위치로 이동하기" class="control-btn" />
+        </div>
+    </div>
+    <code id="snippet" class="snippet"></code>
+</div>
+
+
+<script id="code">
+var map = new naver.maps.Map(document.getElementById('map'), {
+    zoom: 18,
+    mapTypeId: 'normal',
+    center: new naver.maps.LatLng(37.3586524, 127.1060678)
+});
+
+
+var jeju = new naver.maps.LatLng(33.3590628, 126.534361),
+    busan = new naver.maps.LatLng(35.1797865, 129.0750194),
+    dokdo = new naver.maps.LatLngBounds(
+                new naver.maps.LatLng(37.2380651, 131.8562652),
+                new naver.maps.LatLng(37.2444436, 131.8786475)),
+    seoul = new naver.maps.LatLngBounds(
+                new naver.maps.LatLng(37.42829747263545, 126.76620435615891),
+                new naver.maps.LatLng(37.7010174173061, 127.18379493229875));
+
+$("#to-jeju").on("click", function(e) {
+    e.preventDefault();
+
+    map.setCenter(jeju);
+});
+
+$("#to-1").on("click", function(e) {
+    e.preventDefault();
+
+    map.setZoom(6, true);
+});
+
+$("#to-dokdo").on("click", function(e) {
+    e.preventDefault();
+
+    map.fitBounds(dokdo);
+});
+
+$("#to-busan").on("click", function(e) {
+    e.preventDefault();
+
+    map.panTo(busan);
+});
+
+$("#to-seoul").on("click", function(e) {
+    e.preventDefault();
+
+    map.panToBounds(seoul);
+});
+
+$("#panBy").on("click", function(e) {
+    e.preventDefault();
+
+    map.panBy(new naver.maps.Point(10, 10));
+});
+
+$("#My_pos").on("click", function(e) {
+    e.preventDefault();
+    
+    //getLocation();
+
+    window.alert("계속 추가중입니다. ^^\n" +
+                "게시물 댓글, 메일로 알려주세요~\n" +
+                "천천히 탭하세요~");
+});
+
+
+
+//현재위치 알아내기
+var infowindow = new naver.maps.InfoWindow();
+
+function onSuccessGeolocation(position) {
+    var location = new naver.maps.LatLng(position.coords.latitude,
+                                         position.coords.longitude);
+
+    map.setCenter(location); // 얻은 좌표를 지도의 중심으로 설정합니다.
+    map.setZoom(10); // 지도의 줌 레벨을 변경합니다.
+
+    infowindow.setContent('<div style="padding:20px;">' + 'geolocation.getCurrentPosition() 위치' + '</div>');
+
+    infowindow.open(map, location);
+    console.log('Coordinates: ' + location.toString());
+}
+
+function onErrorGeolocation() {
+    var center = map.getCenter();
+
+    infowindow.setContent('<div style="padding:20px;">' +
+        '<h5 style="margin-bottom:5px;color:#f00;">Geolocation failed!</h5>'+ "latitude: "+ center.lat() +"<br />longitude: "+ center.lng() +'</div>');
+
+    infowindow.open(map, center);
+}
+
+$(window).on("load", function() {
+    if (navigator.geolocation) {
+        /**
+         * navigator.geolocation 은 Chrome 50 버젼 이후로 HTTP 환경에서 사용이 Deprecate 되어 HTTPS 환경에서만 사용 가능 합니다.
+         * http://localhost 에서는 사용이 가능하며, 테스트 목적으로, Chrome 의 바로가기를 만들어서 아래와 같이 설정하면 접속은 가능합니다.
+         * chrome.exe --unsafely-treat-insecure-origin-as-secure="http://example.com"
+         */
+        navigator.geolocation.getCurrentPosition(onSuccessGeolocation, onErrorGeolocation);
+    } else {
+        var center = map.getCenter();
+        infowindow.setContent('<div style="padding:20px;"><h5 style="margin-bottom:5px;color:#f00;">Geolocation not supported</h5></div>');
+        infowindow.open(map, center);
+    }
+});
+
+//현재위치 알아내기 -끝-
+
+
+
+var HOME_PATH = window.HOME_PATH || '.';
+
+naver.maps.Event.once(map, 'init_stylemap', function () {
+    $.ajax({
+        url: HOME_PATH +'/data/polyline.json',
+        dataType: 'json',
+        success: startDataLayer
+    });
+});
+
+function getLocation() {
+  if (navigator.geolocation) { // GPS를 지원하면
+    navigator.geolocation.getCurrentPosition(function(position) {
+      alert(position.coords.latitude + ' ' + position.coords.longitude);
+    }, function(error) {
+      console.error(error);
+    }, {
+      enableHighAccuracy: false,
+      maximumAge: 0,
+      timeout: Infinity
+    });
+  } else {
+    alert('GPS를 지원하지 않습니다');
+  }
+}
+
+
+function startDataLayer(geojson) {
+    map.data.addGeoJson(geojson);
+
+    map.data.setStyle(function(feature) {
+        var color = 'red';
+
+        if (feature.getProperty('isColorful')) {
+            color = feature.getProperty('color');
+        }
+
+        return {
+            fillColor: color,
+            strokeColor: color,
+            strokeWeight: 2,
+            icon: null
+        };
+    });
+
+    map.data.addListener('click', function(e) {
+        e.feature.setProperty('isColorful', true);
+    });
+
+    map.data.addListener('dblclick', function(e) {
+        var bounds = e.feature.getBounds();
+
+        if (bounds) {
+            map.panToBounds(bounds);
+        }
+    });
+
+    map.data.addListener('mouseover', function(e) {
+        map.data.overrideStyle(e.feature, {
+            strokeWeight: 8,
+            icon: HOME_PATH +'/img/example/pin_spot.png'
+        });
+    });
+
+    map.data.addListener('mouseout', function(e) {
+        map.data.revertStyle();
+    });
+}
+</script>
+
+</body>
+</html>
