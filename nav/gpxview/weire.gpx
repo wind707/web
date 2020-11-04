@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.0" creator="GPSBabel - https://www.gpsbabel.org" xmlns="http://www.topografix.com/GPX/1/0">
+  <time>2020-11-04T20:09:25.594Z</time>
+  <bounds minlat="37.410619824" minlon="127.136726269" maxlat="37.493489411" maxlon="127.203691521"/>
+  <trk>
+    <name>위례삼동선</name>
+    <trkseg>
+      <trkpt lat="37.493489411" lon="127.136726269">
+        <ele>118.649</ele>
+      </trkpt>
+      <trkpt lat="37.466986231" lon="127.162573893">
+        <ele>119.261</ele>
+      </trkpt>
+      <trkpt lat="37.461180140" lon="127.167048814">
+        <ele>118.187</ele>
+      </trkpt>
+      <trkpt lat="37.455812380" lon="127.162202572">
+        <ele>117.113</ele>
+      </trkpt>
+      <trkpt lat="37.449490420" lon="127.166384246">
+        <ele>114.965</ele>
+      </trkpt>
+      <trkpt lat="37.448741907" lon="127.166618843">
+        <ele>103.321</ele>
+      </trkpt>
+      <trkpt lat="37.447881233" lon="127.166921353">
+        <ele>90.933</ele>
+      </trkpt>
+      <trkpt lat="37.446891723" lon="127.167443443">
+        <ele>81.060</ele>
+      </trkpt>
+      <trkpt lat="37.446091957" lon="127.167592486">
+        <ele>82.174</ele>
+      </trkpt>
+      <trkpt lat="37.445452259" lon="127.168008786">
+        <ele>88.342</ele>
+      </trkpt>
+      <trkpt lat="37.445012460" lon="127.168372592">
+        <ele>94.636</ele>
+      </trkpt>
+      <trkpt lat="37.444690830" lon="127.168842668">
+        <ele>100.931</ele>
+      </trkpt>
+      <trkpt lat="37.444139447" lon="127.169232432">
+        <ele>108.066</ele>
+      </trkpt>
+      <trkpt lat="37.443219656" lon="127.169131681">
+        <ele>117.921</ele>
+      </trkpt>
+      <trkpt lat="37.442698412" lon="127.169195537">
+        <ele>122.632</ele>
+      </trkpt>
+      <trkpt lat="37.442158179" lon="127.169558424">
+        <ele>126.815</ele>
+      </trkpt>
+      <trkpt lat="37.441809897" lon="127.170351343">
+        <ele>131.805</ele>
+      </trkpt>
+      <trkpt lat="37.441375805" lon="127.171484142">
+        <ele>122.123</ele>
+      </trkpt>
+      <trkpt lat="37.439615678" lon="127.172518190">
+        <ele>106.796</ele>
+      </trkpt>
+      <trkpt lat="37.437868433" lon="127.173469196">
+        <ele>90.778</ele>
+      </trkpt>
+      <trkpt lat="37.435319634" lon="127.174043132">
+        <ele>91.458</ele>
+      </trkpt>
+      <trkpt lat="37.431120495" lon="127.176308650">
+        <ele>96.133</ele>
+      </trkpt>
+      <trkpt lat="37.429271187" lon="127.177814167">
+        <ele>107.299</ele>
+      </trkpt>
+      <trkpt lat="37.424760604" lon="127.181302484">
+        <ele>117.340</ele>
+      </trkpt>
+      <trkpt lat="37.420027414" lon="127.186754282">
+        <ele>230.824</ele>
+      </trkpt>
+      <trkpt lat="37.415281170" lon="127.195562342">
+        <ele>110.570</ele>
+      </trkpt>
+      <trkpt lat="37.410619824" lon="127.203691521">
+        <ele>97.634</ele>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>
