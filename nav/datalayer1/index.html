@@ -48,8 +48,38 @@
 
 <script id="code">
     // + - 컨트롤러
-    var mapOptions = {
-        mapTypeControl: true,
+    // var mapOptions = {
+    //     mapTypeControl: true,
+    //     mapTypeControlOptions: {
+    //         style: naver.maps.MapTypeControlStyle.BUTTON,
+    //         position: naver.maps.Position.TOP_RIGHT
+    //     },
+    //     zoomControl: true,
+    //     zoomControlOptions: {
+    //         style: naver.maps.ZoomControlStyle.SMALL,
+    //         position: naver.maps.Position.RIGHT_CENTER
+    //     },
+    //     scaleControl: true,
+    //     scaleControlOptions: {
+    //         position: naver.maps.Position.BOTTOM_RIGHT
+    //     },
+    //     logoControl: true,
+    //     logoControlOptions: {
+    //         position: naver.maps.Position.TOP_LEFT
+    //     },
+    //     mapDataControl: true,
+    //     mapDataControlOptions: {
+    //         position: naver.maps.Position.BOTTOM_LEFT
+    //     }
+    // };
+
+//var map = new naver.maps.Map(document.getElementById('map'), mapOptions);
+
+var map = new naver.maps.Map(document.getElementById('map'), {
+    zoom: 18,
+    mapTypeId: 'normal',
+    center: new naver.maps.LatLng(37.3586524, 127.1060678),
+    mapTypeControl: true,
         mapTypeControlOptions: {
             style: naver.maps.MapTypeControlStyle.BUTTON,
             position: naver.maps.Position.TOP_RIGHT
@@ -71,14 +101,6 @@
         mapDataControlOptions: {
             position: naver.maps.Position.BOTTOM_LEFT
         }
-    };
-
-//var map = new naver.maps.Map(document.getElementById('map'), mapOptions);
-
-var map = new naver.maps.Map(document.getElementById('map'), {
-    zoom: 18,
-    mapTypeId: 'normal',
-    center: new naver.maps.LatLng(37.3586524, 127.1060678)
 });
 
 var jeju = new naver.maps.LatLng(33.3590628, 126.534361),
