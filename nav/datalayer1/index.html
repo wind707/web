@@ -122,7 +122,7 @@ function onSuccessGeolocation(position) {
     map.setZoom(8); // 지도의 줌 레벨을 변경합니다.
 
     //infowindow.setContent('<div style="padding:20px;">' + 'geolocation.getCurrentPosition() 위치' + '</div>');
-    infowindow.setContent('<div style="padding:20px;">' + '여기 계시는군요.' + '</div>');
+    infowindow.setContent('<div style="padding:20px;">' + 'You are here.' + '</div>');
 
     infowindow.open(map, location);
     console.log('Coordinates: ' + location.toString());
