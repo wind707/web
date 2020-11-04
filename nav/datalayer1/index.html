@@ -105,7 +105,7 @@ var pos_lng = 126.7662;
 $("#My_pos").on("click", function(e) {
     e.preventDefault();
     
-    map.setZoom(10,true);
+    map.setZoom(18,true);
     map.panTo(naver.maps.LatLng(pos_lat,pos_lng)); // 얻은 위치로 이동
     
     //getLocation();
@@ -134,7 +134,7 @@ function onSuccessGeolocation(position) {
             "\n");
     // here = location;   
     map.setCenter(location); // 얻은 좌표를 지도의 중심으로 설정합니다.
-    map.setZoom(10); // 지도의 줌 레벨을 변경합니다. 작은수치 지도 축소, 큰수치 지도 확대
+    map.setZoom(10); // 지도의 줌 레벨을 변경. 작은수치 지도 축소, 큰수치 지도 확대
 
     //infowindow.setContent('<div style="padding:20px;">' + 'geolocation.getCurrentPosition() 위치' + '</div>');
     infowindow.setContent('<div style="padding:20px;">' + 'You are here..' + '</div>');
