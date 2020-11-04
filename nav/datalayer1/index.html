@@ -102,7 +102,7 @@ $("#panBy").on("click", function(e) {
 $("#My_pos").on("click", function(e) {
     e.preventDefault();
     
-    map.panTo(location); // 얻은 위치로 이동
+    map.panTo(seoul); // 얻은 위치로 이동
     //getLocation();
 
     // window.alert("계속 추가중입니다. ^^\n" +
@@ -122,8 +122,8 @@ function onSuccessGeolocation(position) {
     // window.alert("계속 추가중입니다. ^^\n" +
     //             "게시물 댓글, 메일로 알려주세요~\n" +
     //             "천천히 탭하세요~");
-    window.alert("latitude : " + position.coords.latitude +
-                "\n longitude : " + position.coords.longitude +
+    window.alert("latitude : " + naver.maps.LatLng(position.coords.latitude) +
+                "\n longitude : " + naver.maps.LatLng(position.coords.longitude) +
             "\n");
     // here = location;   
     map.setCenter(location); // 얻은 좌표를 지도의 중심으로 설정합니다.
