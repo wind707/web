@@ -49,19 +49,20 @@ var map = new naver.maps.Map(document.getElementById('map'), {
     center: new naver.maps.LatLng(37.44321, 127.16913)
 });
 
-var HOME_PATH = window.HOME_PATH || '.';
-
-naver.maps.Event.once(map, 'init_stylemap', function () {
-    $.ajax({
-        //url: HOME_PATH +'/data/weire.kml',
-        url: HOME_PATH +'/data/weire.kml',
-        dataType: 'kml',
-        success: startDataLayer
-    });
+$.ajax({
+    url: './data/weire.kml',
+    dataType: 'xml',
+    success: startDataLayer
 });
 
+var map;
 function startDataLayer(xmlDoc) {
-    map.data.addGpx(xmlDoc);
+    map = new naver.map.Map('map', {
+        zoom: 13,
+        center: new naver.maps.LatLng(37.3586524, 127.1060678)
+    });
+
+    map.data.addKml(xmlDoc);
 }
 </script>
 
