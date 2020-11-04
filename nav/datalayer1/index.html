@@ -105,8 +105,9 @@ var pos_lng = 126.7662;
 $("#My_pos").on("click", function(e) {
     e.preventDefault();
     
+    map.setZoom(18);
     map.panTo(naver.maps.LatLng(pos_lat,pos_lng)); // 얻은 위치로 이동
-    map.setZoom(18, true);
+    
     //getLocation();
 
     // window.alert("계속 추가중입니다. ^^\n" +
