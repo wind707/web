@@ -104,9 +104,9 @@ $("#My_pos").on("click", function(e) {
     
     //getLocation();
 
-    window.alert("계속 추가중입니다. ^^\n" +
-                "게시물 댓글, 메일로 알려주세요~\n" +
-                "천천히 탭하세요~");
+    // window.alert("계속 추가중입니다. ^^\n" +
+    //             "게시물 댓글, 메일로 알려주세요~\n" +
+    //             "천천히 탭하세요~");
 });
 
 
@@ -121,7 +121,8 @@ function onSuccessGeolocation(position) {
     map.setCenter(location); // 얻은 좌표를 지도의 중심으로 설정합니다.
     map.setZoom(9); // 지도의 줌 레벨을 변경합니다.
 
-    infowindow.setContent('<div style="padding:20px;">' + 'geolocation.getCurrentPosition() 위치' + '</div>');
+    //infowindow.setContent('<div style="padding:20px;">' + 'geolocation.getCurrentPosition() 위치' + '</div>');
+    infowindow.setContent('<div style="padding:20px;">' + '여기 계시는군요' + '</div>');
 
     infowindow.open(map, location);
     console.log('Coordinates: ' + location.toString());
