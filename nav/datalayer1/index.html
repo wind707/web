@@ -125,8 +125,8 @@ function onSuccessGeolocation(position) {
     // window.alert("계속 추가중입니다. ^^\n" +
     //             "게시물 댓글, 메일로 알려주세요~\n" +
     //             "천천히 탭하세요~");
-    pos_lat = naver.maps.LatLng(position.coords.latitude);
-    pos_lng = naver.maps.LatLng(position.coords.longitude);
+    pos_lat = position.coords.latitude;
+    pos_lng = position.coords.longitude;
     window.alert("latitude  : " + position.coords.latitude +
                "\nlongitude : " + position.coords.longitude +
             "\n");
