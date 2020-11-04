@@ -73,7 +73,7 @@ function startDataLayer(geojson) {
     map.data.addGeoJson(geojson);
 
     map.data.setStyle(function(feature) {
-        var color = 'blue';
+        var color = 'red';
 
         if (feature.getProperty('isColorful')) {
             color = feature.getProperty('color');
