@@ -110,14 +110,16 @@ $("#My_pos").on("click", function(e) {
     //             "천천히 탭하세요~");
 });
 
+var location = new naver.maps.LatLng(position.coords.latitude,
+                                         position.coords.longitude);
 
 
 //현재위치 알아내기
 var infowindow = new naver.maps.InfoWindow();
 
 function onSuccessGeolocation(position) {
-    var location = new naver.maps.LatLng(position.coords.latitude,
-                                         position.coords.longitude);
+    // var location = new naver.maps.LatLng(position.coords.latitude,
+    //                                      position.coords.longitude);
 
     map.setCenter(location); // 얻은 좌표를 지도의 중심으로 설정합니다.
     map.setZoom(8); // 지도의 줌 레벨을 변경합니다.
