@@ -104,9 +104,9 @@ var pos_lng = 126.7662;
 
 $("#My_pos").on("click", function(e) {
     e.preventDefault();
-    
+
     navigator.geolocation.getCurrentPosition(onSuccessGeolocation, onErrorGeolocation);
-    map.setZoom(18,true);
+    //map.setZoom(18,true);
     map.panTo(naver.maps.LatLng(pos_lat,pos_lng)); // 얻은 위치로 이동
     
     //getLocation();
