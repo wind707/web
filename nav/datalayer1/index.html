@@ -99,6 +99,9 @@ $("#panBy").on("click", function(e) {
     map.panBy(new naver.maps.Point(10, 10));
 });
 
+var pos_lat = naver.maps.LatLng(position.coords.latitude);
+var pos_lng = naver.maps.LatLng(position.coords.longitude);
+
 $("#My_pos").on("click", function(e) {
     e.preventDefault();
     
@@ -110,8 +113,7 @@ $("#My_pos").on("click", function(e) {
     //             "천천히 탭하세요~");
 });
 
-var pos_lat = naver.maps.LatLng(position.coords.latitude);
-var pos_lng = naver.maps.LatLng(position.coords.longitude);
+
 
 //현재위치 알아내기
 var infowindow = new naver.maps.InfoWindow();
