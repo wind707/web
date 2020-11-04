@@ -99,8 +99,8 @@ $("#panBy").on("click", function(e) {
     map.panBy(new naver.maps.Point(10, 10));
 });
 
-var pos_lat = naver.maps.LatLng(position.coords.latitude);
-var pos_lng = naver.maps.LatLng(position.coords.longitude);
+var pos_lat = new naver.maps.LatLng(position.coords.latitude);
+var pos_lng = new naver.maps.LatLng(position.coords.longitude);
 
 $("#My_pos").on("click", function(e) {
     e.preventDefault();
