@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>내지도 테스트 https GPS</title>
+    <meta name="viewport" content="initial-scale=1.0; maximum-scale=1.0; minimum-scale=1.0; user-scalable=no;" /> 
+    <title>gpx viewS</title>
     <script src="../../docs/js/jquery-1.9.1.js"></script>
     <!-- <script type="text/javascript" src="../../docs/js/examples-base.js"></script>  -->
     <script type="text/javascript" src="../../docs/js/highlight.min.js"></script>
@@ -65,7 +65,7 @@ $("#origin").on("click", function(e) {
 
 $("#singu").on("click", function(e) {
     e.preventDefault();
-    map.setZoom(20);
+    map.setZoom(19);
     map.panTo(singu);
 });
 
