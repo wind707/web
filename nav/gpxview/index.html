@@ -58,7 +58,7 @@
 
 <div class="wrap">
     <div id="map"></div>
-        <div class="infotext">ⓒ2020 SY,Oh 13</div>
+        <div class="infotext">ⓒ2020 SY,Oh 14</div>
 </div>
 
 <script>
@@ -115,6 +115,18 @@ $("#poly_on").on("click", function (e) {
 
 });
 
+if (getZoom() > 10){
+    var filOpacity = 0.03;
+    var strOpacity = 0.3;
+    drawCircle();
+}
+else{
+    var filOpacity = 0;
+    var strOpacity = 0;
+    drawCircle();
+};
+
+function drawCircle(){
 //써클 을지대학교
 var circle = new naver.maps.Circle({
         map: map,
@@ -154,7 +166,7 @@ var circle = new naver.maps.Circle({
         fillOpacity: filOpacity,
         strokeOpacity : strOpacity
     });    
-
+};
 
 //도형지우기
 $("#poly_off").on("click", function(e) {
