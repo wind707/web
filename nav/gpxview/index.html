@@ -68,7 +68,7 @@ var map = new naver.maps.Map(document.getElementById('map'), {
 map.setOptions("tileTransition", true); //타일 fadeIn 효과 켜기
 
 var singu = new naver.maps.LatLng(37.446673, 127.167294),
-    origin =  new naver.maps.LatLng(37.451403, 127.159311)
+    origin =  new naver.maps.LatLng(37.451403, 127.159311);
 
 $("#origin").on("click", function(e) {
     e.preventDefault();
@@ -76,10 +76,11 @@ $("#origin").on("click", function(e) {
     map.panTo(origin);
 });
 
+var singu_circle = new naver.maps.LatLng(37.446681, 127.167301);
+
 //도형그리기
 $("#poly_on").on("click", function(e) {
     e.preventDefault();
-    var singu_circle = new naver.maps.LatLng(37.446681, 127.167301);
 
     var circle = new naver.maps.Circle({
         map: map,
