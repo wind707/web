@@ -59,7 +59,7 @@
 
 <div class="wrap">
     <div id="map"></div>
-        <div class="infotext">ⓒ2020 SY,Oh 19  </div>
+        <div class="infotext">ⓒ2020 SY,Oh 20  </div>
 </div>
 
 <script>
@@ -116,16 +116,14 @@ $("#poly_on").on("click", function (e) {
 
 });
 
-// if (getZoom() > 10){
-//     var filOpacity = 0.03;
-//     var strOpacity = 0.3;
-//     drawCircle();
-//     }
-//     else{
-//     var filOpacity = 0;
-//     var strOpacity = 0;
-//     drawCircle();
-// };
+if (getZoom() > 18){
+    var filOpacity = 0.03;
+    var strOpacity = 0.3;
+    }
+    else{
+    var filOpacity = 0.0;
+    var strOpacity = 0.0;
+    };
 
 drawCircle();
 
