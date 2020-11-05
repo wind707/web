@@ -59,7 +59,7 @@
 
 <div class="wrap">
     <div id="map"></div>
-        <div class="infotext">ⓒ2020 SY,Oh 31  </div>
+        <div class="infotext">ⓒ2020 SY,Oh 32  </div>
 </div>
 
 <script>
@@ -70,19 +70,23 @@
 // });
 
 //줌커트롤러 LARGE
-var mapOptions = {
-        zoomControl: true,
-        zoomControlOptions: {
-            style: naver.maps.ZoomControlStyle.LARGE,
-            position: naver.maps.Position.LEFT_CENTER
-        }
-    };
+// var mapOptions = {
+//         zoomControl: true,
+//         zoomControlOptions: {
+//             style: naver.maps.ZoomControlStyle.LARGE,
+//             position: naver.maps.Position.LEFT_CENTER
+//         }
+//     };
 
 
 var map = new naver.maps.Map(document.getElementById('map'), {
     zoom: 13,
     mapTypeId: 'normal',
-    center: new naver.maps.LatLng(37.451403, 127.159311)
+    center: new naver.maps.LatLng(37.451403, 127.159311),
+    zoomControl: true,
+        zoomControlOptions: {
+            style: naver.maps.ZoomControlStyle.LARGE,
+            position: naver.maps.Position.LEFT_CENTER}
 });
 
 map.setOptions("tileTransition", true); //타일 fadeIn 효과 켜기
