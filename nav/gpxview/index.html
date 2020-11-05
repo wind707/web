@@ -59,7 +59,7 @@
 
 <div class="wrap">
     <div id="map"></div>
-        <div class="infotext">ⓒ2020 SY,Oh 32  </div>
+        <div class="infotext">ⓒ2020 SY,Oh 33  </div>
 </div>
 
 <script>
@@ -88,6 +88,25 @@ var map = new naver.maps.Map(document.getElementById('map'), {
             style: naver.maps.ZoomControlStyle.LARGE,
             position: naver.maps.Position.LEFT_CENTER}
 });
+
+//오른쪽 상당에 변수표시
+var contentEl = $('<div class="iw_inner" style="width:350px;position:absolute;top:0;right:0;z-index:1000;background-color:#fff;border:solid 1px #333;">'
+        + '<h3>Map States</h3>'
+        + '<p style="font-size:14px;">zoom : <em class="zoom">'+ map.getZoom() +'</em></p>'
+        + '<p style="font-size:14px;">centerPoint : <em class="center">'+ map.getCenterPoint() +'</em></p>'
+        + '</div>');
+
+    contentEl.appendTo(map.getElement());
+
+    naver.maps.Event.addListener(map, 'zoom_changed', function(zoom) {
+        contentEl.find('.zoom').text(zoom);
+    });
+
+    naver.maps.Event.addListener(map, 'bounds_changed', function(bounds) {
+        contentEl.find('.center').text(map.getCenterPoint());
+        console.log('Center: ' + map.getCenter().toString() + ', Bounds: ' + bounds.toString());
+    });​
+
 
 map.setOptions("tileTransition", true); //타일 fadeIn 효과 켜기
 
@@ -135,7 +154,7 @@ $("#poly_on").on("click", function (e) {
 
 });
 
-if (1 < 18){
+if (1){
     var filOpacity = 0.03;
     var strOpacity = 0.3;
     }
@@ -218,7 +237,6 @@ $("#poly_off").on("click", function(e) {
 
     destroy();
 });
-
 
 
 //경로 그리기
