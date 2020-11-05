@@ -58,7 +58,7 @@
 
 <div class="wrap">
     <div id="map"></div>
-        <div class="infotext">ⓒ2020 SY,Oh 1235</div>
+        <div class="infotext">ⓒ2020 SY,Oh 6</div>
 </div>
 
 <script>
@@ -94,16 +94,31 @@ $("#singu").on("click", function(e) {
 
 var singu_circle = new naver.maps.LatLng(37.446681, 127.167301);
 
-//도형그리기
+//도형그리기  판단하여 그리거나 안그리거나 (한번만 그리기 위하여)
 $("#poly_on").on("click", function (e) {
-    var circle = new naver.maps.Circle({
+
+    if (map.getOptions("tileTransition")) {
+        map.setOptions("tileTransition", false); //타일 fadeIn 효과 끄기
+
+        $(this).removeClass("control-on");
+    } else {
+        map.setOptions("tileTransition", true); //타일 fadeIn 효과 켜기
+        $(this).addClass("control-on");
+    }
+
+});
+
+
+
+//도형그리기
+        var circle = new naver.maps.Circle({
         map: map,
         center: singu_circle,
         radius: 500,
         fillColor: 'crimson',
         fillOpacity: 0.1
     });
-});
+
 
 
 //도형지우기
