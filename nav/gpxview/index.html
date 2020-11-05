@@ -102,14 +102,14 @@
 
     <div class=".map_wrap">
         <div id="map"></div>
-            <div class="infotext">ⓒ2020 SY,Oh v1.73  </div>
+            <div class="infotext">ⓒ2020 SY,Oh v1.74  </div>
     </div>
 
 
 <script id="code">
     var map = new naver.maps.Map('map', {
         zoom: 12,
-        center: new naver.maps.LatLng(37.44321, 127.16913),
+        center: new naver.maps.LatLng(37.445306, 127.161917),
         padding: { top: 100 },
         zoomControl:true,
         zoomControlOptions: {
@@ -140,7 +140,7 @@
 map.setOptions("tileTransition", true); //타일 fadeIn 효과 켜기
 
 var singu = new naver.maps.LatLng(37.446673, 127.167294),
-    origin =  new naver.maps.LatLng(37.451403, 127.159311);
+    origin =  new naver.maps.LatLng(37.445306, 127.161917);
 
 //원위치로이동
 $("#origin").on("click", function(e) {
@@ -169,7 +169,7 @@ var Singu_pos = new naver.maps.LatLng(37.446681, 127.167301);
 var Bogun_pos = new naver.maps.LatLng(37.442331, 127.168867);
 var Gongdan_pos = new naver.maps.LatLng(37.431149, 127.174177);
 var Samdong_pos = new naver.maps.LatLng(37.409423, 127.204558);
-var All_pos = new naver.maps.LatLng(37.451403, 127.159311);
+var All_pos = new naver.maps.LatLng(37.445306, 127.161917);
 
 
 //위례중앙역으로 이동
