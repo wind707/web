@@ -58,7 +58,7 @@
 
 <div class="wrap">
     <div id="map"></div>
-        <div class="infotext">ⓒ2020 SY,Oh 11</div>
+        <div class="infotext">ⓒ2020 SY,Oh 12</div>
 </div>
 
 <script>
@@ -92,7 +92,11 @@ $("#singu").on("click", function(e) {
     map.panTo(singu);
 });
 
+var ulji_circle = new naver.maps.LatLng(37.459997, 127.165766);
+var namhan_circle = new naver.maps.LatLng(37.452569, 127.160238);
 var singu_circle = new naver.maps.LatLng(37.446681, 127.167301);
+var bogun_circle = new naver.maps.LatLng(37.442331, 127.168867);
+
 
 //도형그리기  판단하여 그리거나 안그리거나 (한번만 그리기 위하여)
 $("#poly_on").on("click", function (e) {
@@ -108,9 +112,27 @@ $("#poly_on").on("click", function (e) {
 
 });
 
+//써클 을지대학교
+var circle = new naver.maps.Circle({
+        map: map,
+        center: ulji_circle,
+        radius: 500,
+        fillColor: 'red',
+        fillOpacity: 0.03,
+        strokeOpacity : 0.3
+    });  
 
+//써클 남한산성역
+var circle = new naver.maps.Circle({
+        map: map,
+        center: namhan_circle,
+        radius: 500,
+        fillColor: 'red',
+        fillOpacity: 0.03,
+        strokeOpacity : 0.3
+    });       
 
-//도형그리기 신구대
+//써클 신구대
         var circle = new naver.maps.Circle({
         map: map,
         center: singu_circle,
@@ -120,6 +142,15 @@ $("#poly_on").on("click", function (e) {
         strokeOpacity : 0.3
     });
 
+//써클 보건소
+var circle = new naver.maps.Circle({
+        map: map,
+        center: bogun_circle,
+        radius: 500,
+        fillColor: 'red',
+        fillOpacity: 0.03,
+        strokeOpacity : 0.3
+    });    
 
 
 //도형지우기
