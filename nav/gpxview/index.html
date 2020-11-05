@@ -57,12 +57,13 @@
     <code id="snippet" class="snippet"></code>
 </div>
 
+
 <div class="wrap">
     <div id="map"></div>
-        <div class="infotext">ⓒ2020 SY,Oh 37  </div>
+        <div class="infotext">ⓒ2020 SY,Oh 38  </div>
 </div>
 
-<script>
+
 // var map = new naver.maps.Map(document.getElementById('map'), {
 //     zoom: 12,
 //     mapTypeId: 'normal',
@@ -79,19 +80,19 @@
 //     };
 
 
-var map = new naver.maps.Map('map', {
-    zoom: 13,
-    mapTypeId: 'normal',
-    center: new naver.maps.LatLng(37.451403, 127.159311),
-    padding: { top: 100 },
-    zoomControl: true,
-        zoomControlOptions: {
-            style: naver.maps.ZoomControlStyle.LARGE,
-            position: naver.maps.Position.LEFT_CENTER}
-});
 
-//오른쪽 상당에 변수표시
-var contentEl = $('<div class="iw_inner" style="width:350px;position:absolute;top:0;right:0;z-index:1000;background-color:#fff;border:solid 1px #333;">'
+<script id="code">
+    var map = new naver.maps.Map('map', {
+        zoom: 5,
+        center: new naver.maps.LatLng(37.3614483, 127.1114883),
+        padding: { top: 100 },
+        zoomControl:true,
+        zoomControlOptions: {
+            style: naver.maps.ZoomControlStyle.SMALL
+        }
+    });
+
+    var contentEl = $('<div class="iw_inner" style="width:350px;position:absolute;top:0;right:0;z-index:1000;background-color:#fff;border:solid 1px #333;">'
         + '<h3>Map States</h3>'
         + '<p style="font-size:14px;">zoom : <em class="zoom">'+ map.getZoom() +'</em></p>'
         + '<p style="font-size:14px;">centerPoint : <em class="center">'+ map.getCenterPoint() +'</em></p>'
@@ -106,9 +107,10 @@ var contentEl = $('<div class="iw_inner" style="width:350px;position:absolute;to
     naver.maps.Event.addListener(map, 'bounds_changed', function(bounds) {
         contentEl.find('.center').text(map.getCenterPoint());
         console.log('Center: ' + map.getCenter().toString() + ', Bounds: ' + bounds.toString());
-    });​
+    });
+</script>
 
-
+<script>
 map.setOptions("tileTransition", true); //타일 fadeIn 효과 켜기
 
 var singu = new naver.maps.LatLng(37.446673, 127.167294),
