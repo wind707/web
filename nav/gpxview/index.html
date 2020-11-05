@@ -59,7 +59,7 @@
 
 <div class="wrap">
     <div id="map"></div>
-        <div class="infotext">ⓒ2020 SY,Oh 27  </div>
+        <div class="infotext">ⓒ2020 SY,Oh 28  </div>
 </div>
 
 <script>
@@ -108,26 +108,30 @@ var samdong_circle = new naver.maps.LatLng(37.409423, 127.204558);
 
 //도형그리기  판단하여 그리거나 안그리거나 (한번만 그리기 위하여)
 $("#poly_on").on("click", function (e) {
+    e.preventDefault();
 
-    if (map.getOptions("tileTransition")) {
-        map.setOptions("tileTransition", false); //타일 fadeIn 효과 끄기
+    var filOpacity = 0.03;
+    var strOpacity = 0.3;
 
-        $(this).removeClass("control-on");
-    } else {
-        map.setOptions("tileTransition", true); //타일 fadeIn 효과 켜기
-        $(this).addClass("control-on");
-    }
+    // if (map.getOptions("tileTransition")) {
+    //     map.setOptions("tileTransition", false); //타일 fadeIn 효과 끄기
+
+    //     $(this).removeClass("control-on");
+    // } else {
+    //     map.setOptions("tileTransition", true); //타일 fadeIn 효과 켜기
+    //     $(this).addClass("control-on");
+    // }
 
 });
 
-if (1 < 18){
-    var filOpacity = 0.03;
-    var strOpacity = 0.3;
-    }
-    else{
-    var filOpacity = 0.0;
-    var strOpacity = 0.0;
-    };
+// if (1 < 18){
+//     var filOpacity = 0.03;
+//     var strOpacity = 0.3;
+//     }
+//     else{
+//     var filOpacity = 0.0;
+//     var strOpacity = 0.0;
+//     };
 
 drawCircle();
 
@@ -200,8 +204,8 @@ var circle = new naver.maps.Circle({
 //도형지우기
 $("#poly_off").on("click", function(e) {
     e.preventDefault();
-
-    destroy();
+    var filOpacity = 0.0;
+    var strOpacity = 0.0;
 });
 
 
