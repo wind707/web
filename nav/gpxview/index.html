@@ -59,7 +59,7 @@
 
 <div class="wrap">
     <div id="map"></div>
-        <div class="infotext">ⓒ2020 SY,Oh 25  </div>
+        <div class="infotext">ⓒ2020 SY,Oh 26  </div>
 </div>
 
 <script>
@@ -102,6 +102,8 @@ var namhan_circle = new naver.maps.LatLng(37.452569, 127.160238);
 var singu_circle = new naver.maps.LatLng(37.446681, 127.167301);
 var bogun_circle = new naver.maps.LatLng(37.442331, 127.168867);
 var gongdan_circle = new naver.maps.LatLng(37.431149, 127.174177);
+var samdong_circle = new naver.maps.LatLng(37.409423, 127.204558);
+
 
 
 //도형그리기  판단하여 그리거나 안그리거나 (한번만 그리기 위하여)
@@ -172,7 +174,27 @@ var circle = new naver.maps.Circle({
         fillColor: filColor,
         fillOpacity: filOpacity,
         strokeOpacity : strOpacity
-    });    
+    }); 
+
+//써클 공단
+var circle = new naver.maps.Circle({
+        map: map,
+        center: gongdan_circle,
+        radius: circleRad,
+        fillColor: filColor,
+        fillOpacity: filOpacity,
+        strokeOpacity : strOpacity
+    });
+
+//써클 삼동역
+var circle = new naver.maps.Circle({
+        map: map,
+        center: samdong_circle,
+        radius: circleRad,
+        fillColor: filColor,
+        fillOpacity: filOpacity,
+        strokeOpacity : strOpacity
+    }); 
 };
 
 //도형지우기
