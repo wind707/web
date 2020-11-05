@@ -59,7 +59,7 @@
 
 <div class="wrap">
     <div id="map"></div>
-        <div class="infotext">ⓒ2020 SY,Oh 29  </div>
+        <div class="infotext">ⓒ2020 SY,Oh 30  </div>
 </div>
 
 <script>
@@ -74,7 +74,7 @@ var map = new naver.maps.Map(document.getElementById('map'), {
     center: new naver.maps.LatLng(37.451403, 127.159311)
 });
 
-map.setOptions("tileTransition", true); //타일 fadeIn 효과 켜기
+//map.setOptions("tileTransition", true); //타일 fadeIn 효과 켜기
 
 //줌커트롤러
 var map = new naver.maps.Map('map', {
@@ -84,7 +84,7 @@ var map = new naver.maps.Map('map', {
         zoomControl: true,
         minZoom: 6,
         mapDataControlOptions: {
-            position: naver.maps.Position.TOP_LEFT
+            position: naver.maps.Position.LEFT_CENTER
         }
     });
 
