@@ -60,10 +60,10 @@
 
 <div class="wrap">
     <div id="map"></div>
-        <div class="infotext">ⓒ2020 SY,Oh 38  </div>
+        <div class="infotext">ⓒ2020 SY,Oh 39  </div>
 </div>
 
-
+<script>
 // var map = new naver.maps.Map(document.getElementById('map'), {
 //     zoom: 12,
 //     mapTypeId: 'normal',
@@ -78,17 +78,18 @@
 //             position: naver.maps.Position.LEFT_CENTER
 //         }
 //     };
-
+</script>
 
 
 <script id="code">
     var map = new naver.maps.Map('map', {
-        zoom: 5,
-        center: new naver.maps.LatLng(37.3614483, 127.1114883),
+        zoom: 12,
+        center: new naver.maps.LatLng(37.44321, 127.16913),
         padding: { top: 100 },
         zoomControl:true,
         zoomControlOptions: {
-            style: naver.maps.ZoomControlStyle.SMALL
+            style: naver.maps.ZoomControlStyle.LARGE,
+            position: naver.maps.Position.LEFT_CENTER
         }
     });
 
