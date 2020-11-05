@@ -102,7 +102,7 @@
 
     <div class=".map_wrap">
         <div id="map"></div>
-            <div class="infotext">ⓒ2020 SY,Oh v1.81  </div>
+            <div class="infotext">ⓒ2020 SY,Oh v1.82  </div>
     </div>
 
 
@@ -115,14 +115,15 @@
         zoomControl:true,
         zoomControlOptions: {
             style: naver.maps.ZoomControlStyle.LARGE,
-            position: naver.maps.Position.BOTTOM_LEFT
+            position: naver.maps.Position.LEFT_BTTOM
             //position: naver.maps.Position.LEFT_CENTER
         },
         //일반/위성
         mapTypeControl: true,
         mapTypeControlOptions: {
             style: naver.maps.MapTypeControlStyle.BUTTON,
-            position: naver.maps.Position.TOP_CENTER
+            //position: naver.maps.Position.TOP_CENTER
+            position: naver.maps.Position.RIGHT_TOP
         }
     });
 
