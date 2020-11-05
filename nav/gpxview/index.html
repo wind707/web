@@ -38,7 +38,7 @@
 
 <style type="text/css">
     #wrap .buttons { position:absolute;top:0;left:0;z-index:1000;padding:5px; }
-    #wrap .buttons .control-btn { margin:5px 5px 0 0; }
+    #wrap .buttons .control-btn { margin:0 5px 5px 0; }
 
     /* 이름 */
     .infotext{position: absolute; font-size: 12px;bottom: 5px;right:3%;font-family: system; text-align:right;font-weight: bold; color: black;z-index: 10}
@@ -75,6 +75,19 @@ var map = new naver.maps.Map(document.getElementById('map'), {
 });
 
 map.setOptions("tileTransition", true); //타일 fadeIn 효과 켜기
+
+//줌커트롤러
+var map = new naver.maps.Map('map', {
+        scaleControl: false,
+        logoControl: false,
+        mapDataControl: false,
+        zoomControl: true,
+        minZoom: 6,
+        mapDataControlOptions: {
+            position: naver.maps.Position.TOP_LEFT
+        }
+    });
+
 
 var singu = new naver.maps.LatLng(37.446673, 127.167294),
     origin =  new naver.maps.LatLng(37.451403, 127.159311);
