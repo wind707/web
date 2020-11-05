@@ -101,7 +101,7 @@
 
     <div class=".map_wrap">
         <div id="map"></div>
-            <div class="infotext">ⓒ2020 SY,Oh v1.67  </div>
+            <div class="infotext">ⓒ2020 SY,Oh v1.68  </div>
     </div>
 
 
@@ -172,8 +172,7 @@ var Samdong_circle = new naver.maps.LatLng(37.409423, 127.204558);
 function MoveToWeire() {
     e.preventDefault();
     map.setZoom(19);
-    var moveLatLon = new kakao.maps.LatLng(37.474255, 127.141891);
-    map.panTo(moveLatLon);
+    map.panTo(Weire_circle);
 }
 
 //을지대역으로 이동
@@ -261,7 +260,7 @@ var circle = new naver.maps.Circle({
 //써클 을지대학교
 var circle = new naver.maps.Circle({
         map: map,
-        center: ulji_circle,
+        center: Ulji_circle,
         radius: circleRad,
         fillColor: filColor,
         fillOpacity: filOpacity,
@@ -271,7 +270,7 @@ var circle = new naver.maps.Circle({
 //써클 남한산성역
 var circle = new naver.maps.Circle({
         map: map,
-        center: namhan_circle,
+        center: Namhan_circle,
         radius: circleRad,
         fillColor: filColor,
         fillOpacity: filOpacity,
@@ -281,7 +280,7 @@ var circle = new naver.maps.Circle({
 //써클 신구대
         var circle = new naver.maps.Circle({
         map: map,
-        center: singu_circle,
+        center: Singu_circle,
         radius: circleRad,
         fillColor: filColor,
         fillOpacity: filOpacity,
@@ -291,7 +290,7 @@ var circle = new naver.maps.Circle({
 //써클 보건소
 var circle = new naver.maps.Circle({
         map: map,
-        center: bogun_circle,
+        center: Bogun_circle,
         radius: circleRad,
         fillColor: filColor,
         fillOpacity: filOpacity,
@@ -301,7 +300,7 @@ var circle = new naver.maps.Circle({
 //써클 공단
 var circle = new naver.maps.Circle({
         map: map,
-        center: gongdan_circle,
+        center: Gongdan_circle,
         radius: circleRad,
         fillColor: filColor,
         fillOpacity: filOpacity,
@@ -311,7 +310,7 @@ var circle = new naver.maps.Circle({
 //써클 삼동역
 var circle = new naver.maps.Circle({
         map: map,
-        center: samdong_circle,
+        center: Samdong_circle,
         radius: circleRad,
         fillColor: filColor,
         fillOpacity: filOpacity,
