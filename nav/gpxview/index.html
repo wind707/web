@@ -101,7 +101,7 @@
 
     <div class=".map_wrap">
         <div id="map"></div>
-            <div class="infotext">ⓒ2020 SY,Oh v1.69  </div>
+            <div class="infotext">ⓒ2020 SY,Oh v1.70  </div>
     </div>
 
 
@@ -159,6 +159,7 @@ var filOpacity;
 var strOpacity;
 var circleRad = 500;
 var filColor = 'red';
+var ZoomValue = 10;
 var Weire_pos = new naver.maps.LatLng(37.474255, 127.141891);
 var Ulji_pos = new naver.maps.LatLng(37.459997, 127.165766);
 var Namhan_pos = new naver.maps.LatLng(37.452569, 127.160238);
@@ -170,43 +171,43 @@ var Samdong_pos = new naver.maps.LatLng(37.409423, 127.204558);
 
 //위례중앙역으로 이동
 function MoveToWeire() {
-    map.setZoom(19);
+    map.setZoom(ZoomValue);
     map.panTo(Weire_pos);
 }
 
 //을지대역으로 이동
 function MoveToUlji() {
-    map.setZoom(19);
+    map.setZoom(ZoomValue);
     map.panTo(Ulji_pos);
 }
 
 //남한산성역으로 이동
 function MoveToNamhan() {
-    map.setZoom(19);
+    map.setZoom(ZoomValue);
     map.panTo(Namhan_pos);
 }
 
 //신구대역로 이동
 function MoveToSingu() {
-    map.setZoom(19);
+    map.setZoom(ZoomValue);
     map.panTo(Singu_pos);
 }
 
 //보건소역역으로 이동
 function MoveToBogun() {
-    map.setZoom(19);
+    map.setZoom(ZoomValue);
     map.panTo(Bogun_pos);
 }
 
 //공단역역으로 이동
 function MoveToGongdan() {
-    map.setZoom(19);
+    map.setZoom(ZoomValue);
     map.panTo(Gongdan_pos);
 }
 
 //삼동역역으로 이동
 function MoveToSamdong() {
-    map.setZoom(19);
+    map.setZoom(ZoomValue);
     map.panTo(Samdong_pos);
 }
 
