@@ -59,7 +59,7 @@
 
 <div class="wrap">
     <div id="map"></div>
-        <div class="infotext">ⓒ2020 SY,Oh 24  </div>
+        <div class="infotext">ⓒ2020 SY,Oh 25  </div>
 </div>
 
 <script>
@@ -96,10 +96,12 @@ $("#singu").on("click", function(e) {
 var filOpacity;
 var strOpacity;
 var circleRad = 500;
+var filColor = 'red';
 var ulji_circle = new naver.maps.LatLng(37.459997, 127.165766);
 var namhan_circle = new naver.maps.LatLng(37.452569, 127.160238);
 var singu_circle = new naver.maps.LatLng(37.446681, 127.167301);
 var bogun_circle = new naver.maps.LatLng(37.442331, 127.168867);
+var gongdan_circle = new naver.maps.LatLng(37.431149, 127.174177);
 
 
 //도형그리기  판단하여 그리거나 안그리거나 (한번만 그리기 위하여)
@@ -137,7 +139,7 @@ var circle = new naver.maps.Circle({
         map: map,
         center: ulji_circle,
         radius: circleRad,
-        fillColor: 'red',
+        fillColor: filColor,
         fillOpacity: filOpacity,
         strokeOpacity : strOpacity
     });  
@@ -147,7 +149,7 @@ var circle = new naver.maps.Circle({
         map: map,
         center: namhan_circle,
         radius: circleRad,
-        fillColor: 'red',
+        fillColor: filColor,
         fillOpacity: filOpacity,
         strokeOpacity : strOpacity
     });       
@@ -157,7 +159,7 @@ var circle = new naver.maps.Circle({
         map: map,
         center: singu_circle,
         radius: circleRad,
-        fillColor: 'red',
+        fillColor: filColor,
         fillOpacity: filOpacity,
         strokeOpacity : strOpacity
     });
@@ -167,7 +169,7 @@ var circle = new naver.maps.Circle({
         map: map,
         center: bogun_circle,
         radius: circleRad,
-        fillColor: 'red',
+        fillColor: filColor,
         fillOpacity: filOpacity,
         strokeOpacity : strOpacity
     });    
