@@ -159,62 +159,55 @@ var filOpacity;
 var strOpacity;
 var circleRad = 500;
 var filColor = 'red';
-var Weire_circle = new naver.maps.LatLng(37.474255, 127.141891);
-var Ulji_circle = new naver.maps.LatLng(37.459997, 127.165766);
-var Namhan_circle = new naver.maps.LatLng(37.452569, 127.160238);
-var Singu_circle = new naver.maps.LatLng(37.446681, 127.167301);
-var Bogun_circle = new naver.maps.LatLng(37.442331, 127.168867);
-var Gongdan_circle = new naver.maps.LatLng(37.431149, 127.174177);
-var Samdong_circle = new naver.maps.LatLng(37.409423, 127.204558);
+var Weire_pos = new naver.maps.LatLng(37.474255, 127.141891);
+var Ulji_pos = new naver.maps.LatLng(37.459997, 127.165766);
+var Namhan_pos = new naver.maps.LatLng(37.452569, 127.160238);
+var Singu_pos = new naver.maps.LatLng(37.446681, 127.167301);
+var Bogun_pos = new naver.maps.LatLng(37.442331, 127.168867);
+var Gongdan_pos = new naver.maps.LatLng(37.431149, 127.174177);
+var Samdong_pos = new naver.maps.LatLng(37.409423, 127.204558);
 
 
 //위례중앙역으로 이동
 function MoveToWeire() {
     map.setZoom(19);
-    var moveLatLon = new kakao.maps.LatLng(37.474255, 127.141891);
-    map.panTo(moveLatLon);
+    map.panTo(Weire_pos);
 }
 
 //을지대역으로 이동
 function MoveToUlji() {
-    e.preventDefault();
     map.setZoom(19);
-    map.panTo(Ulji_circle);
+    map.panTo(Ulji_pos);
 }
 
 //남한산성역으로 이동
 function MoveToNamhan() {
-    e.preventDefault();
     map.setZoom(19);
-    map.panTo(Namhan_circle);
+    map.panTo(Namhan_pos);
 }
 
 //신구대역로 이동
 function MoveToSingu() {
-    e.preventDefault();
     map.setZoom(19);
-    map.panTo(Singu_circle);
+    map.panTo(Singu_pos);
 }
 
 //보건소역역으로 이동
 function MoveToBogun() {
-    e.preventDefault();
     map.setZoom(19);
-    map.panTo(Bogun_circle);
+    map.panTo(Bogun_pos);
 }
 
 //공단역역으로 이동
 function MoveToGongdan() {
-    e.preventDefault();
     map.setZoom(19);
-    map.panTo(Gongdan_circle);
+    map.panTo(Gongdan_pos);
 }
 
 //삼동역역으로 이동
 function MoveToSamdong() {
-    e.preventDefault();
     map.setZoom(19);
-    map.panTo(Samdong_circle);
+    map.panTo(Samdong_pos);
 }
 
 //도형그리기  판단하여 그리거나 안그리거나 (한번만 그리기 위하여)
@@ -250,7 +243,7 @@ function drawCircle(){
 //써클 위례중앙역
 var circle = new naver.maps.Circle({
         map: map,
-        center: Weire_circle,
+        center: Weire_pos,
         radius: circleRad,
         fillColor: filColor,
         fillOpacity: filOpacity,
@@ -260,7 +253,7 @@ var circle = new naver.maps.Circle({
 //써클 을지대학교
 var circle = new naver.maps.Circle({
         map: map,
-        center: Ulji_circle,
+        center: Ulji_pos,
         radius: circleRad,
         fillColor: filColor,
         fillOpacity: filOpacity,
@@ -270,7 +263,7 @@ var circle = new naver.maps.Circle({
 //써클 남한산성역
 var circle = new naver.maps.Circle({
         map: map,
-        center: Namhan_circle,
+        center: Namhan_pos,
         radius: circleRad,
         fillColor: filColor,
         fillOpacity: filOpacity,
@@ -280,7 +273,7 @@ var circle = new naver.maps.Circle({
 //써클 신구대
         var circle = new naver.maps.Circle({
         map: map,
-        center: Singu_circle,
+        center: Singu_pos,
         radius: circleRad,
         fillColor: filColor,
         fillOpacity: filOpacity,
@@ -290,7 +283,7 @@ var circle = new naver.maps.Circle({
 //써클 보건소
 var circle = new naver.maps.Circle({
         map: map,
-        center: Bogun_circle,
+        center: Bogun_pos,
         radius: circleRad,
         fillColor: filColor,
         fillOpacity: filOpacity,
@@ -300,7 +293,7 @@ var circle = new naver.maps.Circle({
 //써클 공단
 var circle = new naver.maps.Circle({
         map: map,
-        center: Gongdan_circle,
+        center: Gongdan_pos,
         radius: circleRad,
         fillColor: filColor,
         fillOpacity: filOpacity,
@@ -310,7 +303,7 @@ var circle = new naver.maps.Circle({
 //써클 삼동역
 var circle = new naver.maps.Circle({
         map: map,
-        center: Samdong_circle,
+        center: Samdong_pos,
         radius: circleRad,
         fillColor: filColor,
         fillOpacity: filOpacity,
