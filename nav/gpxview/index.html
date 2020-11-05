@@ -102,7 +102,7 @@
 
     <div class=".map_wrap">
         <div id="map"></div>
-            <div class="infotext">ⓒ2020 SY,Oh v1.75  </div>
+            <div class="infotext">ⓒ2020 SY,Oh v1.76  </div>
     </div>
 
 
@@ -146,22 +146,22 @@
 <script>
 map.setOptions("tileTransition", true); //타일 fadeIn 효과 켜기
 
-var singu = new naver.maps.LatLng(37.446673, 127.167294),
-    origin =  new naver.maps.LatLng(37.445306, 127.161917);
+// var singu = new naver.maps.LatLng(37.446673, 127.167294),
+//     origin =  new naver.maps.LatLng(37.445306, 127.161917);
 
-//원위치로이동
-$("#origin").on("click", function(e) {
-    e.preventDefault();
-    map.setZoom(13);
-    map.panTo(origin);
-});
+// //원위치로이동
+// $("#origin").on("click", function(e) {
+//     e.preventDefault();
+//     map.setZoom(13);
+//     map.panTo(origin);
+// });
 
-//신구대이동
-$("#singu").on("click", function(e) {
-    e.preventDefault();
-    map.setZoom(19);
-    map.panTo(singu);
-});
+// //신구대이동
+// $("#singu").on("click", function(e) {
+//     e.preventDefault();
+//     map.setZoom(19);
+//     map.panTo(singu);
+// });
 
 var filOpacity;
 var strOpacity;
@@ -244,7 +244,7 @@ $("#poly_on").on("click", function (e) {
 
 if (1){
     var filOpacity = 0.03;
-    var strOpacity = 0.3;
+    var strOpacity = 0.7;
     }
     else{
     var filOpacity = 0.0;
