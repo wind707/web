@@ -89,14 +89,11 @@ var singu_circle = new naver.maps.LatLng(37.446681, 127.167301);
 //도형그리기
 $("#poly_on").on("click", function(e) {
     e.preventDefault();
-
-    var circle = new naver.maps.Circle({
-        map: map,
-        center: singu_circle,
-        radius: 500,
-        fillColor: 'crimson',
-        fillOpacity: 0.1
+    map.setZoom(13);
+    map.panTo(singu);    
 });
+
+
 
 //도형지우기
 $("#poly_off").on("click", function(e) {
