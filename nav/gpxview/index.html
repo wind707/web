@@ -84,7 +84,7 @@
         <div id="map"></div>
         <div class="modes1">
             <div class="dropdown">
-                <button class="dropbtn" onclick="audio2.play();">예상역으로 이동</button>
+                <button class="dropbtn" onclick="audio2.play();">예상역 이동</button>
                 <div class="content">
                     <a href="javascript:MoveToWeire();">위례중앙역</a>
                     <a href="javascript:MoveToUlji();">을지대역</a>
@@ -101,7 +101,7 @@
 
     <div class=".map_wrap">
         <div id="map"></div>
-            <div class="infotext">ⓒ2020 SY,Oh v1.64  </div>
+            <div class="infotext">ⓒ2020 SY,Oh v1.65  </div>
     </div>
 
 
@@ -167,6 +167,34 @@ var Bogun_circle = new naver.maps.LatLng(37.442331, 127.168867);
 var Gongdan_circle = new naver.maps.LatLng(37.431149, 127.174177);
 var Samdong_circle = new naver.maps.LatLng(37.409423, 127.204558);
 
+
+//위례중앙역으로 이동
+function MoveToWeire() {
+    e.preventDefault();
+    map.setZoom(19);
+    map.panTo(Weire_circle);
+}
+
+//위례중앙역으로 이동
+function MoveToUlji() {
+    e.preventDefault();
+    map.setZoom(19);
+    map.panTo(Weire_circle);
+}
+
+//위례중앙역으로 이동
+function MoveToNamhan() {
+    e.preventDefault();
+    map.setZoom(19);
+    map.panTo(Weire_circle);
+}
+
+//위례중앙역으로 이동
+function MoveToSingu() {
+    e.preventDefault();
+    map.setZoom(19);
+    map.panTo(Weire_circle);
+}
 
 //위례중앙역으로 이동
 function MoveToWeire() {
