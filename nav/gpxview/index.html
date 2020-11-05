@@ -98,10 +98,10 @@ var singu_circle = new naver.maps.LatLng(37.446681, 127.167301);
 $("#poly_on").on("click", function (e) {
     var circle = new naver.maps.Circle({
         map: map,
-        center: GREEN_FACTORY,
-        radius: 20000,
+        center: singu_circle,
+        radius: 500,
         fillColor: 'crimson',
-        fillOpacity: 0.8
+        fillOpacity: 0.1
     });
 });
 
