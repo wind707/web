@@ -87,12 +87,15 @@ $("#singu").on("click", function(e) {
 var singu_circle = new naver.maps.LatLng(37.446681, 127.167301);
 
 //도형그리기
-$("#poly_on").on("click", function(e) {
-    e.preventDefault();
-    map.setZoom(13);
-    map.panTo(singu);    
+$("#poly_on").on("click", function (e) {
+    var circle = new naver.maps.Circle({
+        map: map,
+        center: GREEN_FACTORY,
+        radius: 20000,
+        fillColor: 'crimson',
+        fillOpacity: 0.8
+    });
 });
-
 
 
 //도형지우기
