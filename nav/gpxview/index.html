@@ -63,6 +63,7 @@ var map = new naver.maps.Map(document.getElementById('map'), {
     center: new naver.maps.LatLng(37.451403, 127.159311)
 });
 
+map.setOptions("tileTransition", true); //타일 fadeIn 효과 켜기
 
 var singu = new naver.maps.LatLng(37.446673, 127.167294),
     origin =  new naver.maps.LatLng(37.451403, 127.159311)
