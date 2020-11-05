@@ -36,14 +36,114 @@
 <!-- </div> -->
 
 
-<style type="text/css">
-    #wrap .buttons { position:absolute;top:0;left:0;z-index:1000;padding:5px; }
-    #wrap .buttons .control-btn { margin:0 5px 5px 0; }
-
-    /* 이름 */
-    .infotext{position: absolute; font-size: 12px;bottom: 5px;right:3%;font-family: system; text-align:right;font-weight: bold; color: black;z-index: 10}
+<style>
+    html, body {width:100%;height:100%;margin:0;padding:0;} 
+    /* 중요 지도크기 */
+    .map_wrap {position:relative;overflow:hidden;width:100%;height:100%;}
     
-</style>
+    .radius_border{border:1px solid #919191;border-radius:5px;} 
+    /* 지도,스카이뷰 버튼 */      
+    .custom_typecontrol {position:absolute;top:10px;right:10px;overflow:hidden;width:130px;height:30px;margin:0;padding:0;z-index:1;font-size:12px;font-family:'Malgun Gothic', '맑은 고딕', sans-serif;}
+    .custom_typecontrol span {display:block;width:65px;height:30px;float:left;text-align:center;line-height:30px;cursor:pointer;}
+    .custom_typecontrol .btn {background:#fff;background:linear-gradient(#fff,  #e6e6e6);}       
+    .custom_typecontrol .btn:hover {background:#f5f5f5;background:linear-gradient(#f5f5f5,#e3e3e3);}
+    .custom_typecontrol .btn:active {background:#e6e6e6;background:linear-gradient(#e6e6e6, #fff);}    
+    .custom_typecontrol .selected_btn {color:#fff;background:#425470;background:linear-gradient(#425470, #5b6d8a);}
+    .custom_typecontrol .selected_btn:hover {color:#fff;}   
+    /* 확대,축소 버튼 */
+    .custom_zoomcontrol {position:absolute;bottom:10%;left:12px;width:42px;height:100px;overflow:hidden;z-index:1;background-color:#f5f5f5;} 
+    .custom_zoomcontrol span {display:block;width:42px;height:50px;text-align:center;cursor:pointer;}     
+    /*  + - 버튼 */
+    .custom_zoomcontrol span img {width:24px;height:24px;padding:12px 0;border:none;}             
+    .custom_zoomcontrol span:first-child{border-bottom:1px solid #bfbfbf;}            
+      
+    
+    /* 닫기가 가능한 커스텀 오버레이 */
+    .wrap {position: absolute;left: 40px;bottom: -35px;width: 232px;height: 152px;margin-left: -144px;text-align: left;overflow: hidden;font-size: 12px;font-family: 'Malgun Gothic', dotum, '돋움', sans-serif;line-height: 1.5;}
+    .wrap * {padding: 0;margin: 0;}
+    .wrap .info {width: 230px;height: 140px;border-radius: 5px;border-bottom: 2px solid #ccc;border-right: 1px solid #ccc;overflow: hidden;background: #fff;}
+    .wrap .info:nth-child(1) {border: 0;box-shadow: 0px 1px 2px #888;}
+    
+    /* 타이틀바 */
+    .info .title {padding: 0px 0 0 12px;height: 27px;background: rgb(2, 79, 221);border-bottom: 1px solid #ddd;font-size: 18px; font-weight: bold;color: rgb(255, 255, 255);}
+    /* .info .close {position: absolute;top: 10px;right: 10px;color: #888;width: 17px;height: 17px;background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/overlay_close.png');} */
+    .info .close:hover {cursor: pointer;}
+    .info .body {position: relative;overflow: hidden;}
+    .info .desc {position: relative;margin: 2px 0 0 10px;height: 120px;}
+    .desc .ellipsis {overflow: hidden;text-overflow: ellipsis;white-space: wrap;}
+    .desc .worktime {color:green; font-size: 11px;}
+    .desc .closed {color:red; font-size: 11px;}
+    .info .link {color: #5085BB;font-size: 11px;text-align: left;}
+    
+    
+    /* 지역 버튼 */
+    .map_wrap {width: 100%;position: relative;}
+    .modes1 {position: absolute;top: 12px;left: 8px;z-index: 10;}
+    .modes2 {position: absolute;top: 15px;left: 107px;z-index: 10;}
+    .modes3 {position: absolute;top: 60px;left: 5px;z-index: 10;}
+    #map {margin-top: 1px;}
+    
+    /* 드롭다운 */
+    .dropbtn { border:none; cursor:pointer; background:rgb(95, 189, 58); padding:0px;width:100px;height:30px;border-radius:15px;font-family: system;font-size:16px;color:#FFF;box-shadow:0 2px 3px 0 rgb(53, 52, 52);}
+    .dropdown{ display:inline-block;}
+    .content{visibility:visible; display:none; background:#F5F5F5;border-radius: 15px; box-shadow:0 6px 6px 0 rgb(53, 52, 52);}
+    .dropdown:hover .content { display:block;}
+    .content a{display:block; color:#036; text-decoration:none; padding:7px 12px;}
+    .content a:hover { background:#D7E9F7;border-radius: 15px;}
+    
+    /* 이름 */
+    .infotext{position: absolute; font-size: 12px;bottom: 5px;right:3%;font-family: system; text-align:right;font-weight: bold; color: black;z-index: 10;}
+    
+    /* 리스트로보기 팝업 버튼 */
+    .popupbtn{ display:inline-block;}
+    .popupbtn1 { border:none; background:rgb(190, 190, 190); padding:0px;width:80px;height:30px;border-radius:15px;font-size:12px;color:#FFF;box-shadow:0 2px 3px 0 rgb(53, 52, 52);}
+    
+    /* 게시판 버튼 */
+    .boardbtn { border:none; cursor:pointer; background:rgb(58, 169, 189); padding:0px;width:70px;height:30px;border-radius:15px;font-size:16px;color:#FFF;box-shadow:0 2px 3px 0 rgb(53, 52, 52);}
+    
+    /* HighScore */
+    .highscore { display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+      position: absolute; font-size: 30px;top: 30px; font-family: system; text-align:center;font-weight: bold; color: rgb(255, 255, 255);z-index: 7;
+        text-shadow: 0px 0px 30px white,0px 0px 30px white,0px 0px 30px white,0px 0px 10px #000000,0px 0px 10px #553300;}
+    
+    </style>
+
+<body>
+
+    <div class="map_wrap">
+        <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div> 
+        <!-- 지도 확대, 축소 컨트롤 div 입니다 -->
+        <div class="custom_zoomcontrol radius_border"> 
+            <span onclick="zoomIn()"><img src="http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/ico_plus.png" alt="확대"></span>  
+            <span onclick="zoomOut()"><img src="http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/ico_minus.png" alt="축소"></span>
+        </div>
+    </div>
+    
+    <div class=".map_wrap">
+        <div id="map"></div>
+        <div class="modes1">
+            <div class="dropdown">
+                <button class="dropbtn" onclick="audio2.play();">Select Stage</button>
+                <div class="content">
+                    <a href="javascript:MoveToSeoul();">서울 경기 인천</a>
+                    <a href="javascript:MoveToKangwon();">강원</a>
+                    <a href="javascript:MoveToDaejeon();">대전 세종 충북 충남</a>
+                    <a href="javascript:MoveToDaegu();">대구 경북</a>
+                    <a href="javascript:MoveToKwangju();">광주 전북 전남</a>
+                    <a href="javascript:MoveToPusan();">부산 울산 경남</a>
+                    <a href="javascript:MoveToJeju();">제주</a>
+                    <a href="javascript:MoveToAll();">전국</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+
+
+
 <div id="wrap" class="section">
     <div id="map" style="width:100%;height:700px;">
         <div class="buttons">
