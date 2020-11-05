@@ -59,7 +59,7 @@
 
 <div class="wrap">
     <div id="map"></div>
-        <div class="infotext">ⓒ2020 SY,Oh 30  </div>
+        <div class="infotext">ⓒ2020 SY,Oh 31  </div>
 </div>
 
 <script>
@@ -68,26 +68,24 @@
 //     mapTypeId: 'normal',
 //     center: new naver.maps.LatLng(37.44321, 127.16913)
 // });
+
+//줌커트롤러 LARGE
+var mapOptions = {
+        zoomControl: true,
+        zoomControlOptions: {
+            style: naver.maps.ZoomControlStyle.LARGE,
+            position: naver.maps.Position.LEFT_CENTER
+        }
+    };
+
+
 var map = new naver.maps.Map(document.getElementById('map'), {
     zoom: 13,
     mapTypeId: 'normal',
     center: new naver.maps.LatLng(37.451403, 127.159311)
 });
 
-//map.setOptions("tileTransition", true); //타일 fadeIn 효과 켜기
-
-//줌커트롤러
-var map = new naver.maps.Map('map', {
-        scaleControl: false,
-        logoControl: false,
-        mapDataControl: false,
-        zoomControl: true,
-        minZoom: 6,
-        mapDataControlOptions: {
-            position: naver.maps.Position.LEFT_CENTER
-        }
-    });
-
+map.setOptions("tileTransition", true); //타일 fadeIn 효과 켜기
 
 var singu = new naver.maps.LatLng(37.446673, 127.167294),
     origin =  new naver.maps.LatLng(37.451403, 127.159311);
