@@ -45,7 +45,8 @@
         <div class="buttons">
             <input id="origin" type="button" value="처음 위치로" class="control-btn" />
             <input id="singu" type="button" value="신구대역" class="control-btn" />
-            <input id="My_pos" type="button" value="현재 위치로" class="control-btn" />
+            <input id="controls" type="button" value="500m반경" class="control-btn" />
+            <!-- <input id="My_pos" type="button" value="현재 위치로" class="control-btn" /> -->
         </div>
     </div>
     <code id="snippet" class="snippet"></code>
@@ -80,8 +81,32 @@ $("#singu").on("click", function(e) {
     map.panTo(singu);
 });
 
+//지도 컨트롤
+$("#controls").on("click", function(e) {
+    e.preventDefault();
 
+    if (map.getOptions("scaleControl")) {
+        map.setOptions({ //모든 지도 컨트롤 숨기기
+            scaleControl: false,
+            logoControl: false,
+            mapDataControl: false,
+            zoomControl: false,
+            mapTypeControl: false
+        });
+        $(this).removeClass('control-on');
+    } else {
+        map.setOptions({ //모든 지도 컨트롤 보이기
+            scaleControl: true,
+            logoControl: true,
+            mapDataControl: true,
+            zoomControl: true,
+            mapTypeControl: true
+        });
+        $(this).addClass('control-on');
+    }
+});
 
+//경로 그리기
 $.ajax({
     url: './data/weire.geojson',
     dataType: 'json',
@@ -129,6 +154,7 @@ function startDataLayer(geojson) {
         map.data.revertStyle();
     });
 }
+//경로 그리기끝-------
 
 var singu_circle = new naver.maps.LatLng(37.446681, 127.167301);
 
