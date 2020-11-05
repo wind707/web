@@ -58,7 +58,7 @@
 
 <div class="wrap">
     <div id="map"></div>
-        <div class="infotext">ⓒ2020 SY,Oh 14</div>
+        <div class="infotext">ⓒ2020 SY,Oh 15/div>
 </div>
 
 <script>
@@ -119,12 +119,16 @@ if (getZoom() > 10){
     var filOpacity = 0.03;
     var strOpacity = 0.3;
     drawCircle();
-}
-else{
+    }
+    else{
     var filOpacity = 0;
     var strOpacity = 0;
     drawCircle();
 };
+
+window.alert("getZoom() " + getZoom() +
+        "\n"
+        );
 
 function drawCircle(){
 //써클 을지대학교
