@@ -97,7 +97,7 @@
 
     <div class=".map_wrap">
         <div id="map"></div>
-            <div class="infotext">ⓒ2020 SY,Oh v2.44  </div>
+            <div class="infotext">ⓒ2020 SY,Oh v2.45  </div>
     </div>
 
 
@@ -176,7 +176,7 @@ var contentString1 = [
 var infowindow = new naver.maps.InfoWindow({
     content: contentString1
 });
-//infowindow.open(map, marker); //이것 켜면 기본으로 먼저 나옴
+infowindow.open(map, marker); //이것 켜면 기본으로 먼저 나옴
 //인포마커끝
 
 
@@ -195,7 +195,7 @@ var contentString2 = [
 var infowindow = new naver.maps.InfoWindow({
     content: contentString2
 });
-//infowindow.open(map, marker); //이것 켜면 기본으로 먼저 나옴
+infowindow.open(map, marker); //이것 켜면 기본으로 먼저 나옴
 //인포마커끝
 
 
