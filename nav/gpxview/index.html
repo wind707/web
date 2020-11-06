@@ -131,22 +131,22 @@
 
 
     //변수상태보기
-    // var contentEl = $('<div class="iw_inner" style="width:200px;position:absolute;top:0;right:0;z-index:1000;background-color:#fff;border:solid 1px #333;">'
-    //     + '<h4>Map States</h4>'
-    //     + '<p style="font-size:12x;">zoom : <em class="zoom">'+ map.getZoom() +'</em></p>'
-    //     + '<p style="font-size:12px;">centerPoint : <em class="center">'+ map.getCenterPoint() +'</em></p>'
-    //     + '</div>');
+    var contentEl = $('<div class="iw_inner" style="width:200px;position:absolute;top:0;right:50%;z-index:1000;background-color:#fff;border:solid 1px #333;">'
+        + '<h4>공유 금지</h4>'
+        + '<p style="font-size:12x;">zoom : <em class="zoom">'+ map.getZoom() +'</em></p>'
+        + '<p style="font-size:12px;">centerPoint : <em class="center">'+ map.getCenterPoint() +'</em></p>'
+        + '</div>');
 
-    // contentEl.appendTo(map.getElement());
+    contentEl.appendTo(map.getElement());
 
-    // naver.maps.Event.addListener(map, 'zoom_changed', function(zoom) {
-    //     contentEl.find('.zoom').text(zoom);
-    // });
+    naver.maps.Event.addListener(map, 'zoom_changed', function(zoom) {
+        contentEl.find('.zoom').text(zoom);
+    });
 
-    // naver.maps.Event.addListener(map, 'bounds_changed', function(bounds) {
-    //     contentEl.find('.center').text(map.getCenterPoint());
-    //     console.log('Center: ' + map.getCenter().toString() + ', Bounds: ' + bounds.toString());
-    // });
+    naver.maps.Event.addListener(map, 'bounds_changed', function(bounds) {
+        contentEl.find('.center').text(map.getCenterPoint());
+        console.log('Center: ' + map.getCenter().toString() + ', Bounds: ' + bounds.toString());
+    });
     //변수상태보기 끝
 
 
