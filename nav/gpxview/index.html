@@ -97,7 +97,7 @@
 
     <div class=".map_wrap">
         <div id="map"></div>
-            <div class="infotext">ⓒ2020 SY,Oh v2.35  </div>
+            <div class="infotext">ⓒ2020 SY,Oh v2.36  </div>
     </div>
 
 
@@ -174,12 +174,7 @@ var Weire = Weire_pos,
 
 var contentString = [
         '<div class="iw_inner">',
-        '   <h3>서울특별시청</h3>',
-        '   <p>서울특별시 중구 태평로1가 31 | 서울특별시 중구 세종대로 110 서울특별시청<br />',
-        '       <img src="'+ HOME_PATH +'/img/example/hi-seoul.jpg" width="55" height="55" alt="서울시청" class="thumb" /><br />',
-        '       02-120 | 공공,사회기관 &gt; 특별,광역시청<br />',
-        '       <a href="http://www.seoul.go.kr" target="_blank">www.seoul.go.kr/</a>',
-        '   </p>',
+        '   <h3>위례중앙역</h3>',
         '</div>'
     ].join('');
 
@@ -195,7 +190,7 @@ naver.maps.Event.addListener(marker, "click", function(e) {
     }
 });
 
-infowindow.open(map, marker);
+//infowindow.open(map, marker); //이것 켜면 기본으로 먼저 나옴
 //인포마커끝
 
 
