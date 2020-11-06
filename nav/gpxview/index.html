@@ -97,7 +97,7 @@
 
     <div class=".map_wrap">
         <div id="map"></div>
-            <div class="infotext">ⓒ2020 SY,Oh v2.33  </div>
+            <div class="infotext">ⓒ2020 SY,Oh v2.35  </div>
     </div>
 
 
@@ -159,6 +159,44 @@ var Bogun_pos = new naver.maps.LatLng(37.442331, 127.168867);
 var Gongdan_pos = new naver.maps.LatLng(37.431149, 127.174177);
 var Samdong_pos = new naver.maps.LatLng(37.409423, 127.204558);
 var All_pos = new naver.maps.LatLng(37.433501, 127.170002); //노선중앙
+
+
+//인포마커
+var Weire = Weire_pos,
+    map = new naver.maps.Map('map', {
+        center: Weire.destinationPoint(0, 500),
+        zoom: 15
+    }),
+    marker = new naver.maps.Marker({
+        map: map,
+        position: Weire
+    });
+
+var contentString = [
+        '<div class="iw_inner">',
+        '   <h3>서울특별시청</h3>',
+        '   <p>서울특별시 중구 태평로1가 31 | 서울특별시 중구 세종대로 110 서울특별시청<br />',
+        '       <img src="'+ HOME_PATH +'/img/example/hi-seoul.jpg" width="55" height="55" alt="서울시청" class="thumb" /><br />',
+        '       02-120 | 공공,사회기관 &gt; 특별,광역시청<br />',
+        '       <a href="http://www.seoul.go.kr" target="_blank">www.seoul.go.kr/</a>',
+        '   </p>',
+        '</div>'
+    ].join('');
+
+var infowindow = new naver.maps.InfoWindow({
+    content: contentString
+});
+
+naver.maps.Event.addListener(marker, "click", function(e) {
+    if (infowindow.getMap()) {
+        infowindow.close();
+    } else {
+        infowindow.open(map, marker);
+    }
+});
+
+infowindow.open(map, marker);
+//인포마커끝
 
 
 //위례중앙역으로 이동
