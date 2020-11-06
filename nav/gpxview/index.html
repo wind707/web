@@ -97,7 +97,7 @@
 
     <div class=".map_wrap">
         <div id="map"></div>
-            <div class="infotext">ⓒ2020 SY,Oh v2.36  </div>
+            <div class="infotext">ⓒ2020 SY,Oh v2.37  </div>
     </div>
 
 
@@ -163,10 +163,6 @@ var All_pos = new naver.maps.LatLng(37.433501, 127.170002); //노선중앙
 
 //인포마커
 var Weire = Weire_pos,
-    map = new naver.maps.Map('map', {
-        center: Weire.destinationPoint(0, 500),
-        zoom: 15
-    }),
     marker = new naver.maps.Marker({
         map: map,
         position: Weire
