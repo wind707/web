@@ -97,7 +97,7 @@
 
     <div class=".map_wrap">
         <div id="map"></div>
-            <div class="infotext">ⓒ2020 SY,Oh v2.37  </div>
+            <div class="infotext">ⓒ2020 SY,Oh v2.38  </div>
     </div>
 
 
@@ -161,11 +161,10 @@ var Samdong_pos = new naver.maps.LatLng(37.409423, 127.204558);
 var All_pos = new naver.maps.LatLng(37.433501, 127.170002); //노선중앙
 
 
-//인포마커
-var Weire = Weire_pos,
-    marker = new naver.maps.Marker({
+//인포마커 위례중앙역
+var marker = new naver.maps.Marker({
         map: map,
-        position: Weire
+        position: Weire_pos
     });
 
 var contentString = [
@@ -177,7 +176,14 @@ var contentString = [
 var infowindow = new naver.maps.InfoWindow({
     content: contentString
 });
+//infowindow.open(map, marker); //이것 켜면 기본으로 먼저 나옴
+//인포마커끝
 
+
+
+
+
+//인포마커를 클릭하면 인포위도우가 커진다
 naver.maps.Event.addListener(marker, "click", function(e) {
     if (infowindow.getMap()) {
         infowindow.close();
@@ -185,9 +191,6 @@ naver.maps.Event.addListener(marker, "click", function(e) {
         infowindow.open(map, marker);
     }
 });
-
-//infowindow.open(map, marker); //이것 켜면 기본으로 먼저 나옴
-//인포마커끝
 
 
 //위례중앙역으로 이동
