@@ -31,11 +31,8 @@
     html, body {width:100%;height:100%;margin:0;padding:0;} 
     /* 중요 지도크기 */
     .map_wrap {position:relative;overflow:hidden;width:100%;height:100%;}
-    
     .radius_border{border:1px solid #919191;border-radius:5px;} 
           
-      
-    
     /* 닫기가 가능한 커스텀 오버레이 */
     .wrap {position: absolute;left: 40px;bottom: -35px;width: 232px;height: 152px;margin-left: -144px;text-align: left;overflow: hidden;font-size: 12px;font-family: 'Malgun Gothic', dotum, '돋움', sans-serif;line-height: 1.5;}
     .wrap * {padding: 0;margin: 0;}
@@ -44,7 +41,6 @@
     
     /* 타이틀바 */
     .info .title {padding: 0px 0 0 12px;height: 27px;background: rgb(2, 79, 221);border-bottom: 1px solid #ddd;font-size: 18px; font-weight: bold;color: rgb(255, 255, 255);}
-    /* .info .close {position: absolute;top: 10px;right: 10px;color: #888;width: 17px;height: 17px;background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/overlay_close.png');} */
     .info .close:hover {cursor: pointer;}
     .info .body {position: relative;overflow: hidden;}
     .info .desc {position: relative;margin: 2px 0 0 10px;height: 120px;}
@@ -52,7 +48,6 @@
     .desc .worktime {color:green; font-size: 11px;}
     .desc .closed {color:red; font-size: 11px;}
     .info .link {color: #5085BB;font-size: 11px;text-align: left;}
-    
     
     /* 지역 버튼 */
     .map_wrap {width: 100%;position: relative;}
@@ -84,7 +79,7 @@
         <div id="map"></div>
         <div class="modes1">
             <div class="dropdown">
-                <button class=".dropbtn" onclick="audio2.play();">예상역 이동</button>
+                <button class="dropbtn" onclick="audio2.play();">예상역 이동</button>
                 <div class="content">
                     <a href="javascript:MoveToWeire();">위례중앙역</a>
                     <a href="javascript:MoveToUlji();">을지대역</a>
@@ -102,7 +97,7 @@
 
     <div class=".map_wrap">
         <div id="map"></div>
-            <div class="infotext">ⓒ2020 SY,Oh v2.29  </div>
+            <div class="infotext">ⓒ2020 SY,Oh v2.30  </div>
     </div>
 
 
@@ -116,21 +111,16 @@
         zoomControlOptions: {
             style: naver.maps.ZoomControlStyle.SMALL,
             position: naver.maps.Position.RIGHT_CENTER
-            //position: naver.maps.Position.LEFT_BOTTOM
-            //position: naver.maps.Position.LEFT_CENTER
         },
         //일반/위성
         mapTypeControl: true,
         mapTypeControlOptions: {
             style: naver.maps.MapTypeControlStyle.BUTTON,
-            //position: naver.maps.Position.TOP_CENTER
             position: naver.maps.Position.RIGHT_TOP
         }
     });
 
-
-
-    //변수상태보기
+    //상태보기
     var contentEl = $('<div class="iw_inner" style="width:150px;position:absolute;top:0;left:120px;z-index:1000;background-color:#fff;border:solid 1px #333;line-height:2px; ">'
         //+ '<h4>공유 금지</h4>'
         + '<p style="font-size:8px;"> 공유금지 (테스트버젼임) <em class="gong"></em></p>'
@@ -148,30 +138,12 @@
         contentEl.find('.center').text(map.getCenter());
         //console.log('Center: ' + map.getCenter().toString() + ', Bounds: ' + bounds.toString());
     });
-    //변수상태보기 끝
-
+    //상태보기 끝
 
 </script>
 
 <script>
 map.setOptions("tileTransition", true); //타일 fadeIn 효과 켜기
-
-// var singu = new naver.maps.LatLng(37.446673, 127.167294),
-//     origin =  new naver.maps.LatLng(37.445306, 127.161917);
-
-// //원위치로이동
-// $("#origin").on("click", function(e) {
-//     e.preventDefault();
-//     map.setZoom(13);
-//     map.panTo(origin);
-// });
-
-// //신구대이동
-// $("#singu").on("click", function(e) {
-//     e.preventDefault();
-//     map.setZoom(19);
-//     map.panTo(singu);
-// });
 
 var filOpacity;
 var strOpacity;
