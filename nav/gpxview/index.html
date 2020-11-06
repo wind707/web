@@ -97,7 +97,7 @@
 
     <div class=".map_wrap">
         <div id="map"></div>
-            <div class="infotext">ⓒ2020 SY,Oh v2.46  </div>
+            <div class="infotext">ⓒ2020 SY,Oh v2.47  </div>
     </div>
 
 
@@ -143,6 +143,24 @@
 </script>
 
 <script>
+// 이미지 다운로드 금지 스마트폰
+$(document).ready(function () {
+    $(document).bind("contextmenu", function (e) {
+        return false;
+    });
+});
+$(document).bind('selectstart', function () { return false; });
+$(document).bind('dragstart', function () { return false; });
+
+
+//더블탭
+var lastTouchEnd = 0;
+document.documentElement.addEventListener('touchend', function (event) {
+    var now = (new Date()).getTime();
+    if (now - lastTouchEnd <= 300) { event.preventDefault(); } lastTouchEnd = now;
+},
+    false);
+
 map.setOptions("tileTransition", true); //타일 fadeIn 효과 켜기
 
 var filOpacity;
