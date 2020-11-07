@@ -97,7 +97,7 @@
 
     <div class=".map_wrap">
         <div id="map"></div>
-            <div class="infotext">ⓒ2020 SY,Oh v2.49  </div>
+            <div class="infotext">ⓒ2020 SY,Oh v2.50  </div>
     </div>
 
 
@@ -299,23 +299,23 @@ $.each(url2, function (key,data) {   //<<key 지우면 안됨
         // 다음맵 API 새창에서 링크열기 
         // var web 에 포함된 https://를 제거
         // '                <div class="link">' + 'Web: ' + '<a href="http://' + web + ' target="_blank" >' + web + '</a></div>' +
-        var web1 = mydata[c].web.replace("https://","");
-        var web = web1.replace("http://","");
-        var phone = mydata[c].tel;
-        var content = '<div class="wrap">' +
-            '    <div class="info">' +
-            '        <div class="title">' + mydata[c].name + '</div>' +
-            '        <div class="body">' +
-            '            <div class="desc">' +
-            '                <div><a href="tel:' + phone + '" >' + ' ☎    ' + phone + '</a>' + "우편: " + mydata[c].areacode +'</div>' +
-            '                <div class="ellipsis">' + mydata[c].addr + '</div>' +
-            '                <div class="worktime">' + '영업시간: ' + mydata[c].worktime + '</div>' +
-            '                <div class="closed">'  + '  휴무: ' + mydata[c].closed +  ' </div>' +
-            '                <div class="link">' + 'Web: ' + '<a href="http://' + web + '" target="_blank">' + web + '</a></div>' +
-            '            </div>' +
-            '        </div>' +
-            '    </div>' +
-            '</div>';
+        // var web1 = mydata[c].web.replace("https://","");
+        // var web = web1.replace("http://","");
+        // var phone = mydata[c].tel;
+        // var content = '<div class="wrap">' +
+        //     '    <div class="info">' +
+        //     '        <div class="title">' + mydata[c].name + '</div>' +
+        //     '        <div class="body">' +
+        //     '            <div class="desc">' +
+        //     '                <div><a href="tel:' + phone + '" >' + ' ☎    ' + phone + '</a>' + "우편: " + mydata[c].areacode +'</div>' +
+        //     '                <div class="ellipsis">' + mydata[c].addr + '</div>' +
+        //     '                <div class="worktime">' + '영업시간: ' + mydata[c].worktime + '</div>' +
+        //     '                <div class="closed">'  + '  휴무: ' + mydata[c].closed +  ' </div>' +
+        //     '                <div class="link">' + 'Web: ' + '<a href="http://' + web + '" target="_blank">' + web + '</a></div>' +
+        //     '            </div>' +
+        //     '        </div>' +
+        //     '    </div>' +
+        //     '</div>';
 
 
             
@@ -352,10 +352,6 @@ $.each(url2, function (key,data) {   //<<key 지우면 안됨
 }); //$.get
 
 // 다음맵 API 레트로 맵에서 끌어온 부분끝 
-
-
-
-
 
 
 
