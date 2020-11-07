@@ -163,6 +163,204 @@ document.documentElement.addEventListener('touchend', function (event) {
 
 map.setOptions("tileTransition", true); //타일 fadeIn 효과 켜기
 
+
+
+
+
+// 다음맵 API 레트로 맵에서 끌어온 부분 시작
+
+var url2 = [{"group": "aa", "name": "레트로스펙트", "tel": "010-2894-9618", "areacode": "04372", "addr": "서울 용산구 청파로 100 나진상가13동 지하 가-10호", "web": "www.retrospects.co.kr", "worktime": "", "closed": "", "detail": "", "gps": "37.532872, 126.962347"},
+{"group": "aa", "name": "몬스터만물상", "tel": "010-2969-3790", "areacode": "07007", "addr": "서울 동작구 사당로27길 54", "web": "smartstore.naver.com/monshop", "worktime": "매장문의 매일1~20시", "closed": "화수", "detail": "", "gps": "37.486082, 126.976859"},
+{"group": "aa", "name": "레트로카페 트레이더", "tel": "070-8807-6910", "areacode": "06721", "addr": "서울 서초구 효령로 316-1 2층", "web": "", "worktime": "매일 11:00~22:00", "closed": "", "detail": "", "gps": "37.485383, 127.018953"},
+{"group": "bb", "name": "옥인오락실", "tel": "02-737-4788", "areacode": "03034", "addr": "서울 종로구 옥인길 28", "web": "", "worktime": "", "closed": "", "detail": "", "gps": "37.580928, 126.967222"},
+{"group": "bb", "name": "콤콤오락실", "tel": "010-7112-5788", "areacode": "04315", "addr": "서울 용산구 백범로87길 51", "web": "", "worktime": "매일 00:00~24:00", "closed": "", "detail": "", "gps": "37.539499, 126.969291"},
+{"group": "bb", "name": "아카트로닉스레트로게임", "tel": "032-215-4783", "areacode": "14548", "addr": "경기 부천시 중동로262번길 50", "web": "www.instagram.com/akatronics", "worktime": "매일 12:00~24:00", "closed": "", "detail": "", "gps": "37.502552, 126.771593"},
+{"group": "bb", "name": "낭만오락실", "tel": "010-4866-8907", "areacode": "61640", "addr": "광주 남구 백서로 67 1층 낭만오락실", "web": "www.instagram.com/retro_videogame", "worktime": "매일 09:00~22:00", "closed": "", "detail": "", "gps": "35.138621, 126.915412"},
+{"group": "bb", "name": "빽투더레트로 (오락실)", "tel": "070-7382-5600", "areacode": "22314", "addr": "인천 중구 신포로27번길 101", "web": "", "worktime": "", "closed": "", "detail": "", "gps": "37.473855, 126.620180"},
+{"group": "bb", "name": "연남오락실", "tel": "010-2728-1212", "areacode": "03982", "addr": "서울 마포구 연희로 37 지하", "web": "ynretrogamepub.modoo.at", "worktime": "12,18시~02,04시", "closed": "월요일 휴무", "detail": "", "gps": "37.562042, 126.927077"},
+{"group": "aa", "name": "레트로게임카페리멤버", "tel": "070-7765-1437", "areacode": "11645", "addr": "경기 의정부시 망월로 17 지층", "web": "smartstore.naver.com/retroremember", "worktime": "매일 13:00~21:00", "closed": "", "detail": "", "gps": "37.707964, 127.046328"},
+{"group": "ccc", "name": "Ultima4 (apple ][)", "tel": "", "areacode": "", "addr": "", "web": "", "worktime": "", "closed": "", "detail": "", "gps": "37.470132, 126.587610"},
+{"group": "bb", "name": "정인게임장", "tel": "", "areacode": "06913", "addr": "서울 동작구 만양로18길 14", "web": "", "worktime": "매일 10:00~01,02시", "closed": "", "detail": "", "gps": "37.512994, 126.944992"},
+{"group": "bb", "name": "넥슨컴퓨터박물관", "tel": "064-745-1994", "areacode": "63091", "addr": "제주 제주시 1100로 3198-8", "web": "nexoncomputermuseum.org", "worktime": "", "closed": "", "detail": "", "gps": "33.471843, 126.484945"},
+{"group": "bb", "name": "제로하나 컴퓨터박물관", "tel": "064-725-1970", "areacode": "63076", "addr": "제주 제주시 월산북길 48-24", "web": "www.zerohana.com/", "worktime": "매일 10:00~18:00", "closed": "매주수,설날/추석", "detail": "", "gps": "33.475348, 126.459920"},
+{"group": "bb", "name": "레트로카페메모리", "tel": "055-289-8855", "areacode": "63076", "addr": "경남 창원시 성산구 가양로 112-1", "web": "https://cafe.naver.com/cafememory", "worktime": "매일 11:00~22:00", "closed": "", "detail": "", "gps": "35.208979, 128.705549"},
+{"group": "aa", "name": "레트로게임", "tel": "010-8676-2216", "areacode": "10018", "addr": "경기 김포시 통진읍 조강로 50-1 3층 301호 레트로게임", "web": "https://cafe.naver.com/retrogamekimpo", "worktime": "매일 12:00~20:00", "closed": "연중무휴,카페공지", "detail": "", "gps": "37.691539, 126.596959"},
+{"group": "aa", "name": "겜찾사", "tel": "055-263-7700", "areacode": "51452", "addr": "경남 창원시 성산구 비음로27번길 46-6", "web": "cafe.naver.com/0552637700/", "worktime": "매일 11:00~20:00", "closed": "", "detail": "", "gps": "35.230717, 128.703550"},
+{"group": "aa", "name": "게임슈퍼브라더스", "tel": "070-8699-2765", "areacode": "10465", "addr": "경기 고양시 덕양구 호국로790번길 119 양원빌딩 201호", "web": "cafe.naver.com/superbros1", "worktime": "매일 11~21시 일 10:30~18:30", "closed": "", "detail": "", "gps": "37.654003, 126.842185"},
+{"group": "aa", "name": "VGR (구미겜몰)", "tel": "010-8244-5331", "areacode": "39224", "addr": "경북 구미시 금오산로 5길3 2층", "web": "http://www.vgr.co.kr/", "worktime": "", "closed": "", "detail": "", "gps": "36.128320, 128.338225"},
+{"group": "on", "name": "게임사랑 (온라인 샵)", "tel": "010-7636-0800", "areacode": "49214", "addr": "부산광역시 서구 동대신동1가 12-51", "web": "https://smartstore.naver.com/gamelove", "worktime": "(온라인 샵)", "closed": "", "detail": "", "gps": "35.112040, 129.025817"},
+{"group": "on", "name": "애기와멍멍이 (온라인 샵)", "tel": "010-7175-2251", "areacode": "42134", "addr": "대구광역시 수성구 수성로50길 22 쉐르빌 101호", "web": "https://smartstore.naver.com/qkrgud83", "worktime": "(온라인 샵)", "closed": "", "detail": "", "gps": "35.847526, 128.614355"},
+{"group": "on", "name": "성우네 (온라인 샵)", "tel": "010-4614-8891", "areacode": "46009", "addr": "부산광역시 기장군 정관읍 정관3로 51정관롯데캐슬2차 210동 2002호", "web": "https://smartstore.naver.com/goodpanjang", "worktime": "(온라인 샵)", "closed": "", "detail": "", "gps": "35.331352, 129.168895"},
+{"group": "aa", "name": "트레더", "tel": "02-714-3425", "areacode": "04372", "addr": "서울특별시 용산구 한강로3가 2-8 나진상가 13동 지하 나-1호", "web": "https://gametrader.modoo.at/?link=dmfvx4y6", "worktime": "매일 10시 ~ 오후 8시,토 일영업", "closed": "둘째, 넷째 주 화요일만 휴무", "detail": "", "gps": "37.532798, 126.962866"},
+{"group": "on", "name": "레트로플레이어 (온라인 샵)", "tel": "010-9789-5940", "areacode": "10551", "addr": "경기도 고양시 덕양구 삼원로 102 (엘에이치원흥도래울마을1단지) 104-703", "web": "https://smartstore.naver.com/retroplayer", "worktime": "(온라인 샵)", "closed": "", "detail": "", "gps": "37.638099, 126.873451"},
+{"group": "aa", "name": "레트로게임샵", "tel": "010-3221-7988", "areacode": "21695", "addr": "인천광역시 남동구 남동서로143번길 31 남동공단 81BL/4LT 3층", "web": "https://smartstore.naver.com/retrogs", "worktime": "(온라인 샵)", "closed": "", "detail": "", "gps": "37.404055, 126.687142"},
+{"group": "aa", "name": "레트로게임", "tel": "070-4319-2782", "areacode": "18488", "addr": "경기도 화성시 동탄면 동탄대로9길 19", "web": "http://www.retrogame.co.kr/", "worktime": "(온라인 샵)", "closed": "", "detail": "", "gps": "37.173797, 127.104347"},
+{"group": "on", "name": "레트로드 (온라인 샵)", "tel": "010-8417-1479", "areacode": "48508", "addr": "부산 남구 대연동 55-1 센츄리시티21 1310호", "web": "http://retroad.co.kr/", "worktime": "(온라인 샵)", "closed": "", "detail": "", "gps": "35.137161, 129.100704"},
+{"group": "bb", "name": "대한컴퓨터박물관", "tel": "070-7437-4673", "areacode": "11929", "addr": "경기 구리시 검배로29번길 27 B1", "web": "http://www.computermuseum.or.kr/", "worktime": "금토일만개방 10:30~19 토예약", "closed": "", "detail": "", "gps": "37.599800, 127.143498"},
+{"group": "bb", "name": "카페레트로시티", "tel": "010-4224-7070", "areacode": "46763", "addr": "부산 강서구 명지오션시티8로30번길 22-11", "web": "https://blog.naver.com/cafe_retrocity", "worktime": "매일 10:30~21:30", "closed": "", "detail": "", "gps": "35.086230, 128.909928"},
+{"group": "bb", "name": "레트로게임바", "tel": "070-7528-5517", "areacode": "04049", "addr": "서울 마포구 잔다리로 7 3층", "web": "www.facebook.com/RetrogamebarRGB/", "worktime": "평일 18~03시 주말 18~05시", "closed": "", "detail": "", "gps": "37.550520, 126.922131"},
+{"group": "bb", "name": "레트로보이즈", "tel": "070-4224-8385", "areacode": "63595", "addr": "제주 서귀포시 태평로 363", "web": "booking.naver.com/booking/5/bizes/269590", "worktime": "", "closed": "", "detail": "", "gps": "33.246431, 126.560222"},
+{"group": "bb", "name": "지능계발", "tel": "02-336-1945", "areacode": "04015", "addr": "서울 마포구 망원로2길 82", "web": "www.instagram.com/arcadebarseoul/", "worktime": "평일 13:30~22 주말 13:30~22", "closed": "월요일 휴무", "detail": "", "gps": "37.553598, 126.903398"},
+{"group": "bb", "name": "아스카게임박물관", "tel": "070-4224-8385", "areacode": "10859", "addr": "경기 파주시 탄현면 헤이리마을길 59-101", "web": "booking.naver.com/booking/5/bizes/206574", "worktime": "매일 10:00~23:00", "closed": "", "detail": "", "gps": "37.791603, 126.695562"},
+{"group": "bb", "name": "아이존게임박물관", "tel": "070-7773-2904", "areacode": "10859", "addr": "경기 파주시 탄현면 헤이리마을길 18-1 UV하우스", "web": "", "worktime": "주말 11:00~20:00", "closed": "평일 휴무", "detail": "", "gps": "37.787722, 126.695810"},
+{"group": "aa", "name": "TIMEZ", "tel": "053-526-3339", "areacode": "42145", "addr": "대구시 수성구 들안로 28길 87", "web": "https://cafe.naver.com/gameshoptimez", "worktime": "11~21시", "closed": "", "detail": "", "gps": "35.845731, 128.617667"},
+{"group": "bb", "name": "레트로 카페 메모리(상남동)", "tel": "010-8482-9009", "areacode": "51495", "addr": "경남 창원시 성산구 마디미로3번길 10 성산빌딩 1층 레트로 카페 메모리", "web": "https://cafe.naver.com/cafememory", "worktime": "매일 12~23:59", "closed": "", "detail": "", "gps": "35.223123, 128.686430"},
+{"group": "bb", "name": "레트로 카페 메모리(석동점)", "tel": "0507-1349-4045", "areacode": "51658", "addr": "경남 창원시 진해구 석동로39번길 37", "web": "https://cafe.naver.com/cafememory", "worktime": "매일 12~21시", "closed": "", "detail": "", "gps": "35.157017, 128.700538"}
+]
+
+
+$.each(url2, function (key,data) {   //<<key 지우면 안됨
+    //var tot_cnt = 1;
+    //var mydata = $(data.Sheet1); //  Sheet1 이후로
+    var mydata = $(data); //  Sheet1 이후로
+    //var dcount = data.count; // 한페이지내의 리스트 카운트,건수
+
+        // window.alert("\n group " + mydata[0].group + 
+        //         "\n name " + mydata[0].name +
+        //         "\n addr " + mydata[0].addr +
+        //         "\n web " + mydata[0].web +
+        //         "\n worktime " + mydata[0].worktime +
+        //         "\n closed " + mydata[0].closed +
+        //         "\n detail " + mydata[0].detail +
+        //         "\n gps " + mydata[0].gps +
+        //         "\n data count " + mydata.length +
+        //         "\n data count " + Object.keys(mydata).length) ;
+
+
+    for (var c = 0; c < mydata.length; c++) {
+
+        // 자료가 없을때
+        if (mydata[c].name == null) {
+            mydata[c].name = '';
+        }
+
+        if (mydata[c].areacode == null) {
+            mydata[c].areacode = '';
+        }
+
+        if (mydata[c].addr == null) {
+            mydata[c].addr = '';
+        }
+
+        if (mydata[c].tel == null) {
+            mydata[c].tel = '';
+        }
+        
+        if (mydata[c].web == null) {
+            mydata[c].web = '';
+        }
+
+        if (mydata[c].worktime == null) {
+            mydata[c].worktime = '<문의>';
+        }
+
+        if (mydata[c].closed == null) {
+            mydata[c].closed = '<문의>';
+        }
+
+        if (mydata[c].detail == null) {
+            mydata[c].detail = '';
+        }
+
+
+        // window.alert("[Mc] =  " + Mc +
+        // "\n MarkerImageAll[Mc] =  " + MarkerImageAll[Mc] +
+        // "\n MarkerImage =  " + MarkerImage );
+
+        //이미지 마커 (그룹에 따라 다르게 찍어줌)
+        if(mydata[c].group == 'aa' || mydata[c].group == 'on'){
+            MarkerImage = MarkerGoldAll[Mc];
+        }else if(mydata[c].group == 'bb' || mydata[c].group == 'cafe'){
+            MarkerImage = MarkerSilverAll[Mc];
+        }else if(mydata[c].group == 'ccc'){
+            MarkerImage = MarkerTypeCCC;
+        // xx 폐점
+        }else if(mydata[c].group == 'closed'){
+            MarkerImage = MarkerTypexx;
+        }
+
+
+        //다음맵 API 마커 이미지 다른것으로 쓸때
+        // var imageSrc = MarkerImage, // 마커이미지의 주소입니다    
+        //     imageSize = new kakao.maps.Size(32, 39), // 마커이미지의 크기입니다
+        //     imageOption = { offset: new kakao.maps.Point(16, 45) }; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+        // var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption);
+
+        // 마커를 하나씩 바꾼다
+        Mc += 1;
+
+        //마커갯수 3 (0~3 총4개)
+        if(Mc >= 3)
+        {
+            Mc = 0;
+        }
+
+  
+        // 다음맵 API 새창에서 링크열기 
+        // var web 에 포함된 https://를 제거
+        // '                <div class="link">' + 'Web: ' + '<a href="http://' + web + ' target="_blank" >' + web + '</a></div>' +
+        var web1 = mydata[c].web.replace("https://","");
+        var web = web1.replace("http://","");
+        var phone = mydata[c].tel;
+        var content = '<div class="wrap">' +
+            '    <div class="info">' +
+            '        <div class="title">' + mydata[c].name + '</div>' +
+            '        <div class="body">' +
+            '            <div class="desc">' +
+            '                <div><a href="tel:' + phone + '" >' + ' ☎    ' + phone + '</a>' + "우편: " + mydata[c].areacode +'</div>' +
+            '                <div class="ellipsis">' + mydata[c].addr + '</div>' +
+            '                <div class="worktime">' + '영업시간: ' + mydata[c].worktime + '</div>' +
+            '                <div class="closed">'  + '  휴무: ' + mydata[c].closed +  ' </div>' +
+            '                <div class="link">' + 'Web: ' + '<a href="http://' + web + '" target="_blank">' + web + '</a></div>' +
+            '            </div>' +
+            '        </div>' +
+            '    </div>' +
+            '</div>';
+
+
+            
+        //mydata[c].gps를 , 기준으로 분리해서 배열에 넣는다
+        var GPSposition = mydata[c].gps.split(",");
+
+        //  window.alert("\n GPSposition[0] " + GPSposition[0] + 
+        //              "\n GPSposition[1] " + GPSposition[1]); 
+        // 다음맵 API 마커를 생성합니다
+        // var marker = new kakao.maps.Marker({
+        //     map: map, // 마커를 표시할 지도
+        //     // clickable: true,
+        //     position: new kakao.maps.LatLng(GPSposition[0], GPSposition[1]), // 마커의 위치
+        //     //position: new kakao.maps.LatLng(mydata[c].gps), // 마커의 위치
+        //     image: markerImage // 마커이미지 설정 
+        // });
+
+
+        // 다음맵 API 마커에 표시할 인포윈도우를 생성합니다 
+        // var infowindow = new kakao.maps.InfoWindow({
+        //     content: content, // 인포윈도우에 표시할 내용
+        //     removable: true
+        // });
+
+
+        // 다음맵 API Click했을때 반응
+        // kakao.maps.event.addListener(marker, 'click', makeOverListener(map, marker, infowindow));
+        // markers.push(marker);  // 배열에 생성된 마커를 추가합니다
+
+
+    } //다음맵 APIfor cnt loop
+    //다음맵 API
+    //clusterer.addMarkers(markers);
+}); //$.get
+
+// 다음맵 API 레트로 맵에서 끌어온 부분끝 
+
+
+
+
+
+
+
+
+
 var filOpacity;
 var strOpacity;
 var circleRad = 500;
