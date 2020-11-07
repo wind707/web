@@ -97,7 +97,7 @@
 
     <div class=".map_wrap">
         <div id="map"></div>
-            <div class="infotext">ⓒ2020 SY,Oh v2.53  </div>
+            <div class="infotext">ⓒ2020 SY,Oh v2.54  </div>
     </div>
 
 
@@ -120,25 +120,7 @@
         }
     });
 
-    //상태보기
-    var contentEl = $('<div class="iw_inner" style="width:150px;position:absolute;top:0;left:120px;z-index:1000;background-color:#fff;border:solid 1px #333;line-height:2px; ">'
-        //+ '<h4>공유 금지</h4>'
-        + '<p style="font-size:12px;"> 공유금지 (테스트버젼임) <em class="gong"></em></p>'
-        + '<p style="font-size:8px;"> zoom : <em class="zoom">'+ map.getZoom() +'</em></p>'
-        + '<p style="font-size:8px;"> <em class="center">'+ map.getCenter() +'</em></p>'
-        + '</div>');
-
-    contentEl.appendTo(map.getElement());
-
-    naver.maps.Event.addListener(map, 'zoom_changed', function(zoom) {
-        contentEl.find('.zoom').text(zoom);
-    });
-
-    naver.maps.Event.addListener(map, 'bounds_changed', function(bounds) {
-        contentEl.find('.center').text(map.getCenter());
-        //console.log('Center: ' + map.getCenter().toString() + ', Bounds: ' + bounds.toString());
-    });
-    //상태보기 끝
+    
 
 </script>
 
@@ -354,7 +336,25 @@ $.ajax(url2, function (key,data) {   //<<key 지우면 안됨
 
 // 다음맵 API 레트로 맵에서 끌어온 부분끝 
 
+//상태보기
+var contentEl = $('<div class="iw_inner" style="width:150px;position:absolute;top:0;left:120px;z-index:1000;background-color:#fff;border:solid 1px #333;line-height:2px; ">'
+        //+ '<h4>공유 금지</h4>'
+        + '<p style="font-size:12px;"> 공유금지 (테스트버젼임) <em class="gong"></em></p>'
+        + '<p style="font-size:8px;"> zoom : <em class="zoom">'+ map.getZoom() +'</em></p>'
+        + '<p style="font-size:8px;"> <em class="center">'+ map.getCenter() +'</em></p>'
+        + '</div>');
 
+    contentEl.appendTo(map.getElement());
+
+    naver.maps.Event.addListener(map, 'zoom_changed', function(zoom) {
+        contentEl.find('.zoom').text(zoom);
+    });
+
+    naver.maps.Event.addListener(map, 'bounds_changed', function(bounds) {
+        contentEl.find('.center').text(map.getCenter());
+        //console.log('Center: ' + map.getCenter().toString() + ', Bounds: ' + bounds.toString());
+    });
+    //상태보기 끝
 
 
 
