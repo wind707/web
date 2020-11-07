@@ -97,7 +97,7 @@
 
     <div class=".map_wrap">
         <div id="map"></div>
-            <div class="infotext">ⓒ2020 SY,Oh v2.57  </div>
+            <div class="infotext">ⓒ2020 SY,Oh v2.58  </div>
     </div>
 
 
@@ -147,7 +147,7 @@ map.setOptions("tileTransition", true); //타일 fadeIn 효과 켜기
 
 
 
-
+var mydata_global;
 
 // 다음맵 API 레트로 맵에서 끌어온 부분 시작
 
@@ -327,7 +327,7 @@ $.ajax(url2, function (key,data) {   //<<key 지우면 안됨
         // 다음맵 API Click했을때 반응
         // kakao.maps.event.addListener(marker, 'click', makeOverListener(map, marker, infowindow));
         // markers.push(marker);  // 배열에 생성된 마커를 추가합니다
-
+            mydata_global = mydata[1].name;
 
     } //다음맵 APIfor cnt loop
     //다음맵 API
@@ -342,7 +342,7 @@ var contentEl = $('<div class="iw_inner" style="width:150px;position:absolute;to
         + '<p style="font-size:12px;"> 공유금지 (테스트버젼임) <em class="gong"></em></p>'
         + '<p style="font-size:8px;"> zoom : <em class="zoom">'+ map.getZoom() +'</em></p>'
         + '<p style="font-size:8px;"> <em class="center">'+ map.getCenter() +'</em></p>'
-        + '<p style="font-size:8px;"> <em class="mydata">'+ mydata[1].name +'</em></p>'
+        + '<p style="font-size:8px;"> <em class="mydata">'+ mydata_global +'</em></p>'
         + '</div>');
 
     contentEl.appendTo(map.getElement());
@@ -356,7 +356,7 @@ var contentEl = $('<div class="iw_inner" style="width:150px;position:absolute;to
         //console.log('Center: ' + map.getCenter().toString() + ', Bounds: ' + bounds.toString());
     
     naver.maps.Event.addListener(map, 'bounds_changed', function(bounds) {
-    contentEl.find('.mydata').text(mydata[1].name);
+    contentEl.find('.mydata').text(mydata_global);
     });
     //상태보기 끝
 
