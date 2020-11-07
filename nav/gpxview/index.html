@@ -97,7 +97,7 @@
 
     <div class=".map_wrap">
         <div id="map"></div>
-            <div class="infotext">ⓒ2020 SY,Oh v2.55  </div>
+            <div class="infotext">ⓒ2020 SY,Oh v2.56  </div>
     </div>
 
 
@@ -342,7 +342,7 @@ var contentEl = $('<div class="iw_inner" style="width:150px;position:absolute;to
         + '<p style="font-size:12px;"> 공유금지 (테스트버젼임) <em class="gong"></em></p>'
         + '<p style="font-size:8px;"> zoom : <em class="zoom">'+ map.getZoom() +'</em></p>'
         + '<p style="font-size:8px;"> <em class="center">'+ map.getCenter() +'</em></p>'
-        + '<p style="font-size:8px;"> <em class="center">'+ map.getCenter() +'</em></p>'
+        + '<p style="font-size:8px;"> <em class="mydata">'+ mydata[1] +'</em></p>'
         + '</div>');
 
     contentEl.appendTo(map.getElement());
@@ -354,6 +354,9 @@ var contentEl = $('<div class="iw_inner" style="width:150px;position:absolute;to
     naver.maps.Event.addListener(map, 'bounds_changed', function(bounds) {
         contentEl.find('.center').text(map.getCenter());
         //console.log('Center: ' + map.getCenter().toString() + ', Bounds: ' + bounds.toString());
+    
+    naver.maps.Event.addListener(map, 'bounds_changed', function(bounds) {
+    contentEl.find('.mydata').text(mydata[1]);
     });
     //상태보기 끝
 
